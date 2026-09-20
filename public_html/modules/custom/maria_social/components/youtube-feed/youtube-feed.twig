@@ -1,0 +1,20 @@
+{{ attach_library('maria_social/social_embed') }}
+{# A channel's "uploads" playlist ID is its channel ID with the UC prefix swapped for UU. #}
+{% set channel_id = channel_id|trim %}
+{% set playlist_id = 'UU' ~ channel_id|slice(2) %}
+{# Written in Klaro's blocked-until-consent form: no src until the visitor agrees. #}
+{% if channel_id starts with 'UC' and channel_id|length == 24 %}
+<div class="social-embed social-embed--feed">
+  <div class="social-embed__frame">
+    <iframe
+      data-name="youtube"
+      data-src="https://www.youtube-nocookie.com/embed/videoseries?list={{ playlist_id }}"
+      title="{{ title|default('Latest videos') }}"
+      loading="lazy"
+      allow="accelerometer; encrypted-media; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+{% endif %}

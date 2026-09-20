@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Threads post
+description: Embeds one public Threads post. Loads from Threads only after the visitor consents.
+group: Social
+status: stable
+props:
+  type: object
+  required:
+    - url
+  properties:
+    url:
+      type: string
+      format: uri
+      title: Post link
+      description: The post's address, e.g. https://www.threads.com/@username/post/AbC123xyz
+      examples:
+        - https://www.threads.com/@username/post/AbC123xyz

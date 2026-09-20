@@ -1,0 +1,17 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Instagram post
+description: Embeds one public Instagram post, reel or video. Loads from Instagram only after the visitor consents.
+group: Social
+status: stable
+props:
+  type: object
+  required:
+    - url
+  properties:
+    url:
+      type: string
+      format: uri
+      title: Post link
+      description: The post's address, e.g. https://www.instagram.com/p/AbC123xyz/ (also works for /reel/).
+      examples:
+        - https://www.instagram.com/p/AbC123xyz/

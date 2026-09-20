@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Hooks for the Maria Santana social embeds module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * FormaTheme's social menu labels each icon link "Follow us on " with the
+ * platform name missing (icon-only menu links have an empty title), and that
+ * aria-label hides the icon's own label. Use a corrected copy of the template
+ * instead, without modifying the contributed theme.
+ */
+function maria_social_theme_registry_alter(array &$theme_registry): void {
+  if (isset($theme_registry['menu__social'])) {
+    $theme_registry['menu__social']['path'] = \Drupal::service('extension.list.module')->getPath('maria_social') . '/templates';
+    $theme_registry['menu__social']['template'] = 'menu--social';
+  }
+}

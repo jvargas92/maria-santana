@@ -1,0 +1,11 @@
+{{ attach_library('maria_social/social_embed') }}
+{{ attach_library('maria_social/threads_embed') }}
+<div class="social-embed social-embed--threads">
+  <blockquote
+    class="text-post-media"
+    data-text-post-permalink="{{ url }}"
+    data-text-post-version="0"
+  >
+    <a href="{{ url }}" rel="noopener" target="_blank">{{ 'View this post on Threads'|t }}</a>
+  </blockquote>
+</div>

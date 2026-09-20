@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Social links menu (icon-only), based on FormaTheme's menu--social template.
+ *
+ * Differs from the original only in the aria-label: it names the platform from
+ * the menu link's own title (e.g. "Follow on Instagram") instead of the
+ * rendered, icon-only title, which is empty.
+ */
+#}
+{% set menu_classes = menu_classes|default([])|merge(['social-menu', 'flex', 'flex-row', 'gap-3', 'list-none', 'p-0'])|filter(v => v is not empty) %}
+
+<ul class="{{ menu_classes|join(' ') }}">
+  {% for item in items %}
+    <li class="social-menu--item">
+      <a
+        href="{{ item.url }}"
+        aria-label="{{ 'Follow on @platform'|t({'@platform': item.original_link.title}) }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-menu--icon align-center flex aspect-square text-3xl transition duration-300 hover:opacity-60"
+      >
+        {{ item.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

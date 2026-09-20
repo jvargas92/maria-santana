@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: YouTube channel feed
+description: A video player showing a channel's uploads, newest first. It updates itself as new videos are published, with no API key. Loads from YouTube only after the visitor consents.
+group: Social
+status: stable
+props:
+  type: object
+  required:
+    - channel_id
+  properties:
+    channel_id:
+      type: string
+      title: Channel ID
+      description: The channel's ID, which starts with UC and is 24 characters long. In YouTube Studio, open Settings > Channel > Advanced settings.
+      examples:
+        - UCBR8-60-B28hp2BmDPdntcQ
+    title:
+      type: string
+      title: Accessible title
+      description: Describes the player for screen readers.
+      default: Latest videos
+      examples:
+        - Latest videos

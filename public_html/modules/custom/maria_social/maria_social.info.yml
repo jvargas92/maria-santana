@@ -1,0 +1,5 @@
+name: Maria Santana social embeds
+type: module
+description: 'Canvas components for embedding YouTube, Instagram and Threads content, loaded only after visitor consent (Klaro).'
+package: Custom
+core_version_requirement: ^11

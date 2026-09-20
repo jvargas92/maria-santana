@@ -1,0 +1,36 @@
+/* Shared layout for the social embed components. */
+.social-embed {
+  width: 100%;
+  max-width: 34rem;
+  margin-inline: auto;
+}
+
+.social-embed--feed {
+  max-width: none;
+}
+
+.social-embed__frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--primary, #111c35);
+}
+
+.social-embed__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Keep Meta's blockquote from overflowing narrow columns before it upgrades. */
+.social-embed .instagram-media,
+.social-embed .text-post-media {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin-inline: 0 !important;
+}

@@ -1,0 +1,11 @@
+{{ attach_library('maria_social/social_embed') }}
+{{ attach_library('maria_social/instagram_embed') }}
+<div class="social-embed social-embed--instagram">
+  <blockquote
+    class="instagram-media"
+    data-instgrm-permalink="{{ url }}"
+    data-instgrm-version="14"
+  >
+    <a href="{{ url }}" rel="noopener" target="_blank">{{ 'View this post on Instagram'|t }}</a>
+  </blockquote>
+</div>

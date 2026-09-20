@@ -1,0 +1,21 @@
+# Official embed scripts. Klaro recognizes these by domain (see the Instagram
+# and Threads services under /admin/config/user-interface/klaro) and holds them
+# back until the visitor consents, so nothing loads from Meta before then.
+instagram_embed:
+  js:
+    https://www.instagram.com/embed.js:
+      type: external
+      attributes:
+        async: true
+
+threads_embed:
+  js:
+    https://www.threads.com/embed.js:
+      type: external
+      attributes:
+        async: true
+
+social_embed:
+  css:
+    component:
+      css/social-embed.css: {}

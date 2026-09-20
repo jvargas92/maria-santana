@@ -1,0 +1,139 @@
+/**
+ * @file theme.css
+ * Brand colors for the Maria Santana site (navy, red, white).
+ *
+ * This file overrides FormaTheme's bundled src/theme.css. FormaTheme picks it up
+ * automatically because it sits next to index.php; clear Drupal's cache after
+ * editing. Values use the shadcn/ui variable names FormaTheme's Tailwind build
+ * expects.
+ *
+ * Brand palette
+ *   Navy  #111C35  primary dark: text, headings, dark sections, buttons
+ *   Red   #D01F2F  accent: hovers, secondary buttons, badges
+ *   White #FFFFFF  cards and light sections
+ *
+ * Contrast (WCAG): navy on white 16.9:1; white on red 5.4:1; red on the page
+ * background 5.0:1. Red on navy is only 3.2:1, so use it there for fills and
+ * large shapes, not small text.
+ */
+
+:root {
+  /* Page background is a barely-there cool white so pure-white cards and
+     sections still stand out from it. Set to #ffffff for a flat white page. */
+  --background: #f6f7fa;
+  --foreground: #111c35;
+
+  /* Navy: dark sections, primary surfaces. */
+  --primary: #111c35;
+  --primary-foreground: #ffffff;
+
+  /* Red: hover states, secondary buttons, badges. */
+  --secondary: #d01f2f;
+  --secondary-foreground: #ffffff;
+
+  /* Soft navy tints for muted and accent section backgrounds. */
+  --muted: #e4e8f0;
+  --muted-foreground: var(--foreground);
+  --accent: #d5dceb;
+  --accent-foreground: var(--foreground);
+
+  /* Error states: a deeper red so it reads as distinct from the brand red. */
+  --destructive: #b3121f;
+  --destructive-foreground: #ffffff;
+
+  --border: #d3d9e6;
+  --input: #d3d9e6;
+
+  --font-sans: "Poppins", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  --font-mono: "Fira Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+}
+
+/**
+ * Footer on navy.
+ *
+ * FormaTheme paints the footer with the primary color but sets its text to the
+ * regular dark foreground, which only worked while primary was a light beige.
+ * The footer is one self-contained box, so flipping its text to white is safe
+ * here. Do NOT apply this idea globally: white cards inside other navy sections
+ * need their dark text.
+ */
+footer[role="contentinfo"] .bg-primary,
+footer[role="contentinfo"] .bg-primary .text-foreground,
+footer[role="contentinfo"] .bg-primary a,
+footer[role="contentinfo"] .bg-primary a:hover {
+  color: var(--primary-foreground);
+}
+
+footer[role="contentinfo"] .bg-primary a:hover {
+  opacity: 0.75;
+}
+
+/**
+ * Buttons on navy sections.
+ *
+ * FormaTheme's buttons are outlined with the dark foreground color and take
+ * their text color from the surrounding page, so on a navy section they vanish.
+ * A navy section is a <section> whose first child is the absolutely positioned
+ * primary-colored background layer, which is what this selector matches.
+ *
+ * Primary buttons become white outlines that fill red on hover. Secondary
+ * buttons are filled red with white text (5.4:1) and invert on hover. Red is
+ * used as a fill here because red text on navy is only 3.2:1.
+ */
+section:has(> .absolute.bg-primary) a.border-foreground {
+  border-color: var(--primary-foreground);
+  color: var(--primary-foreground);
+}
+
+section:has(> .absolute.bg-primary) a.border-foreground:hover,
+section:has(> .absolute.bg-primary) a.border-foreground:focus-visible {
+  border-color: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+section:has(> .absolute.bg-primary) a.border-secondary {
+  border-color: var(--secondary);
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+section:has(> .absolute.bg-primary) a.border-secondary:hover,
+section:has(> .absolute.bg-primary) a.border-secondary:focus-visible {
+  border-color: var(--primary-foreground);
+  background-color: var(--primary-foreground);
+  color: var(--primary);
+}
+
+/**
+ * Form fields.
+ *
+ * FormaTheme colors placeholders and <select> text with --primary-foreground,
+ * which was dark while primary was beige but is white now that primary is navy.
+ * Use the dark foreground instead (about 5:1 on the field background).
+ */
+input::placeholder,
+textarea::placeholder {
+  color: var(--foreground);
+  opacity: 0.65;
+}
+
+select {
+  color: var(--foreground);
+}
+
+/**
+ * Side-by-side cards (used for video cards).
+ *
+ * The photo box in FormaTheme's hero-side-by-side card is a flex item with an
+ * aspect ratio. At desktop widths that ratio inflates the card's minimum size
+ * (a 16:9 photo pushes the card past its column). Side by side, the photo just
+ * fills its half of the card and crops to fit, so the ratio is only needed
+ * when the card stacks on phones, where it gives a proper 16:9 thumbnail.
+ */
+@media (min-width: 768px) {
+  section.rounded-2xl > div.flex-1.overflow-hidden[class*="aspect-"] {
+    aspect-ratio: auto;
+    min-width: 0;
+  }
+}
