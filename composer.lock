@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "444bd303be1ec8032b64d72ce039bde4",
+    "content-hash": "b80d5052edf698682f9f6b2ad065cfe6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5989,77 +5989,6 @@
                 "source": "https://git.drupalcode.org/project/nouislider_js/-/tree/15.8.0"
             },
             "time": "2025-01-03T10:53:20+00:00"
-        },
-        {
-            "name": "drupal/page_manager",
-            "version": "4.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/page_manager.git",
-                "reference": "8.x-4.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/page_manager-8.x-4.0.zip",
-                "reference": "8.x-4.0",
-                "shasum": "dda6c57aabdad07a5a397b71aa2667d9eaf5ffff"
-            },
-            "require": {
-                "drupal/core": "^9.5 || ^10 || ^11",
-                "drupal/ctools": "^3.15 || ^4.1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-4.0",
-                    "datestamp": "1785216915",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "branch-alias": {
-                    "dev-8.x-4.x": "4.x-dev"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Tim Plunkett",
-                    "homepage": "https://www.drupal.org/u/tim.plunkett",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "eclipsegc",
-                    "homepage": "https://www.drupal.org/user/61203"
-                },
-                {
-                    "name": "japerry",
-                    "homepage": "https://www.drupal.org/user/45640"
-                },
-                {
-                    "name": "joelpittet",
-                    "homepage": "https://www.drupal.org/user/160302"
-                },
-                {
-                    "name": "manuel.adan",
-                    "homepage": "https://www.drupal.org/user/516420"
-                },
-                {
-                    "name": "phenaproxima",
-                    "homepage": "https://www.drupal.org/user/205645"
-                }
-            ],
-            "description": "Provides a way to place blocks on a custom page.",
-            "homepage": "https://www.drupal.org/project/page_manager",
-            "support": {
-                "source": "https://git.drupal.org/project/page_manager.git",
-                "issues": "https://www.drupal.org/project/issues/page_manager",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            }
         },
         {
             "name": "drupal/pathauto",
