@@ -3794,16 +3794,16 @@
         },
         {
             "name": "drupal/drupal_cms_installer",
-            "version": "2.2.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/drupal_cms_installer.git",
-                "reference": "be539b9b3dd98b666438cd0c0b523174af13fdd7"
+                "reference": "7b7cf816a9103471b644a925707cfc2f6ac14bc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Fdrupal_cms_installer/repository/archive.zip?sha=be539b9b3dd98b666438cd0c0b523174af13fdd7",
-                "reference": "be539b9b3dd98b666438cd0c0b523174af13fdd7",
+                "url": "https://git.drupalcode.org/api/v4/projects/project%2Fdrupal_cms_installer/repository/archive.zip?sha=7b7cf816a9103471b644a925707cfc2f6ac14bc0",
+                "reference": "7b7cf816a9103471b644a925707cfc2f6ac14bc0",
                 "shasum": ""
             },
             "require": {
@@ -3818,9 +3818,9 @@
             ],
             "description": "Provides install-time tweaks for Drupal CMS. Not to be used in production.",
             "support": {
-                "source": "https://git.drupalcode.org/project/drupal_cms_installer/-/tree/2.2.0"
+                "source": "https://git.drupalcode.org/project/drupal_cms_installer/-/tree/2.2.1"
             },
-            "time": "2026-09-25T18:09:39+00:00"
+            "time": "2026-09-27T07:10:55+00:00"
         },
         {
             "name": "drupal/drupical",
