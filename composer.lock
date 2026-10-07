@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b80d5052edf698682f9f6b2ad065cfe6",
+    "content-hash": "070e2d95af67caccd890b399f8158756",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6746,6 +6746,50 @@
             }
         },
         {
+            "name": "drupal/require_login",
+            "version": "3.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/require_login.git",
+                "reference": "3.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/require_login-3.0.7.zip",
+                "reference": "3.0.7",
+                "shasum": "790998d5181cada23e33ca331752db6c7d1d68ee"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.7",
+                    "datestamp": "1733847518",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "robbiehobby",
+                    "homepage": "https://www.drupal.org/user/459772"
+                }
+            ],
+            "description": "Easily require user authentication on all pages.",
+            "homepage": "https://www.drupal.org/project/require_login",
+            "support": {
+                "source": "https://git.drupalcode.org/project/require_login"
+            }
+        },
+        {
             "name": "drupal/sam",
             "version": "1.3.2",
             "source": {
@@ -8848,16 +8892,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.24",
+            "version": "v0.3.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b"
+                "reference": "21b7b49d60fcb700016dd27b582ae739c75de816"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/5d3cdef29e93ca3b62b1871359db3078cd99908b",
-                "reference": "5d3cdef29e93ca3b62b1871359db3078cd99908b",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/21b7b49d60fcb700016dd27b582ae739c75de816",
+                "reference": "21b7b49d60fcb700016dd27b582ae739c75de816",
                 "shasum": ""
             },
             "require": {
@@ -8900,10 +8944,9 @@
             ],
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
-                "issues": "https://github.com/laravel/prompts/issues",
-                "source": "https://github.com/laravel/prompts/tree/v0.3.24"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.25"
             },
-            "time": "2026-08-20T12:55:36+00:00"
+            "time": "2026-10-06T02:25:49+00:00"
         },
         {
             "name": "league/commonmark",
@@ -9178,16 +9221,16 @@
         },
         {
             "name": "league/html-to-markdown",
-            "version": "5.1.2",
+            "version": "5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/html-to-markdown.git",
-                "reference": "db234ecdb160b9d2b422c1c130db4b01eb3e9e24"
+                "reference": "5411b9650dd468be52267a6f4a2a26c31d2581be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/db234ecdb160b9d2b422c1c130db4b01eb3e9e24",
-                "reference": "db234ecdb160b9d2b422c1c130db4b01eb3e9e24",
+                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/5411b9650dd468be52267a6f4a2a26c31d2581be",
+                "reference": "5411b9650dd468be52267a6f4a2a26c31d2581be",
                 "shasum": ""
             },
             "require": {
@@ -9243,7 +9286,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/html-to-markdown/issues",
-                "source": "https://github.com/thephpleague/html-to-markdown/tree/5.1.2"
+                "source": "https://github.com/thephpleague/html-to-markdown/tree/5.1.3"
             },
             "funding": [
                 {
@@ -9263,7 +9306,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-07T13:53:32+00:00"
+            "time": "2026-10-06T01:08:41+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
