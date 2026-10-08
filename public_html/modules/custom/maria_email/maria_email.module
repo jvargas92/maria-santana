@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * @file
+ * Hooks for the Maria Santana email tweaks module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_library_info_alter().
+ *
+ * Easy Email Theme prints a branded header above the body of every HTML email,
+ * falling back to the default theme's logo, which in FormaTheme's case is the
+ * "FORMA" wordmark. The template has no branch for omitting that header, so
+ * append a stylesheet to the library the theme inlines into its <style> tag
+ * and hide the header there instead of overriding the contributed template.
+ *
+ * @see easy_email_theme_preprocess_easy_email_body_html()
+ */
+function maria_email_library_info_alter(array &$libraries, string $extension): void {
+  if ($extension !== 'easy_email_theme' || !isset($libraries['style-tag-styles'])) {
+    return;
+  }
+  $path = \Drupal::service('extension.list.module')->getPath('maria_email');
+  $libraries['style-tag-styles']['css']['theme']['/' . $path . '/css/easy-email-header.css'] = [
+    'weight' => 10,
+  ];
+}

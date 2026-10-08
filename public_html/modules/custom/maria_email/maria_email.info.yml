@@ -1,0 +1,7 @@
+name: Maria Santana email tweaks
+type: module
+description: 'Adjustments to the HTML emails sent by Easy Email, without overriding the contributed templates.'
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - easy_email:easy_email

@@ -1,0 +1,15 @@
+/**
+ * @file
+ * Hides the logo header Easy Email Theme places above every email body.
+ *
+ * Inlined into the email's <style> tag by
+ * easy_email_theme_preprocess_easy_email_body_html(), so the selector has to
+ * match the markup of easy-email-body-html.html.twig.
+ */
+
+.email-body > .header {
+  display: none !important;
+  padding: 0 !important;
+  /* Outlook's Word rendering engine ignores display on block elements. */
+  mso-hide: all;
+}
