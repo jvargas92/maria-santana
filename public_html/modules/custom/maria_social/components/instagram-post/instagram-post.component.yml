@@ -15,3 +15,15 @@ props:
       description: The post's address, e.g. https://www.instagram.com/p/AbC123xyz/ (also works for /reel/).
       examples:
         - https://www.instagram.com/p/AbC123xyz/
+    orientation:
+      type: string
+      title: Shape
+      description: 'Reel and video links are shown portrait automatically. Choose Portrait for a video whose link uses the /p/ form, which Instagram would otherwise render as a square feed card.'
+      enum:
+        - auto
+        - portrait
+        - square
+      default: auto
+      examples:
+        - auto
+        - portrait

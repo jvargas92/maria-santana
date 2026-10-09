@@ -1,11 +1,35 @@
+{#
+/**
+ * @file
+ * One embedded Instagram post, reel or video.
+ *
+ * Instagram serves two different embed presentations, chosen by the link: a
+ * /p/ link renders the square feed card, and a /reel/ link renders the post
+ * portrait. A reel is reachable at both, so a video pasted in its /p/ form
+ * comes out square-cropped. The portrait shape rewrites the link to /reel/ to
+ * get the taller presentation.
+ *
+ * Instagram's embed script sizes the iframe from the width available to it,
+ * so a portrait post also needs a narrower column, or it grows extremely tall.
+ */
+#}
 {{ attach_library('maria_social/social_embed') }}
 {{ attach_library('maria_social/instagram_embed') }}
-<div class="social-embed social-embed--instagram">
+
+{% set shape = orientation|default('auto') %}
+{% if shape == 'auto' %}
+  {# A reel or video link is portrait by nature. #}
+  {% set shape = ('/reel/' in url or '/tv/' in url) ? 'portrait' : 'square' %}
+{% endif %}
+
+{% set permalink = shape == 'portrait' ? url|replace({'/p/': '/reel/'}) : url %}
+
+<div class="social-embed social-embed--instagram{{ shape == 'portrait' ? ' social-embed--portrait' : '' }}">
   <blockquote
     class="instagram-media"
-    data-instgrm-permalink="{{ url }}"
+    data-instgrm-permalink="{{ permalink }}"
     data-instgrm-version="14"
   >
-    <a href="{{ url }}" rel="noopener" target="_blank">{{ 'View this post on Instagram'|t }}</a>
+    <a href="{{ permalink }}" rel="noopener" target="_blank">{{ 'View this post on Instagram'|t }}</a>
   </blockquote>
 </div>

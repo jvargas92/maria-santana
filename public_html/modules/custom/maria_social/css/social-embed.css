@@ -34,3 +34,13 @@
   width: 100% !important;
   margin-inline: 0 !important;
 }
+
+/*
+ * Instagram's embed script sizes its iframe from the width it is given, so a
+ * 9:16 reel in the full 34rem column would come out well over a thousand
+ * pixels tall. A narrower column keeps a portrait post in proportion with the
+ * rest of the page while still filling a phone screen.
+ */
+.social-embed--portrait {
+  max-width: 22rem;
+}
