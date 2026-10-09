@@ -1,0 +1,13 @@
+uuid: 683726c0-e098-4948-91fe-6f3835158a09
+langcode: en
+status: true
+dependencies: {  }
+id: designer
+label: Designer
+description: 'site designer'
+htmlElement: meta
+htmlValueAttribute: content
+attributes:
+  -
+    name: name
+    value: designer

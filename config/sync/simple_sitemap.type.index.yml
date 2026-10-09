@@ -1,0 +1,12 @@
+uuid: 6d0c0189-0688-4b5c-a979-42ccd87a7a4e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: K43IaqewW148P3bm7MdUobehznGuzFGzxBBILe8b9aQ
+id: index
+label: 'Sitemap Index'
+description: 'The sitemap index sitemap type. A sitemap of this type lists sitemaps of all other types.'
+sitemap_generator: index
+url_generators:
+  - index

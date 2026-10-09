@@ -1,0 +1,19 @@
+uuid: 1cab5d47-520b-4f5a-8d70-7c6c08ac0994
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: WvJ8GdOlR92rltPuTkF7CXBM_dgXfjMkh2wu6wm_BdE
+id: global
+label: Global
+tags:
+  canonical_url: '[current-page:url:absolute]'
+  'metatag_custom_tag:designer': 'Tech Valet - https://www.techvalet.me'
+  'metatag_custom_tag:sitename': 'Maria Santana Media'
+  og_site_name: '[site:name]'
+  og_url: '[current-page:url:absolute]'
+  referrer: unsafe-url
+  rights: 'Copyright © All rights reserved.'
+  shortlink: '[current-page:url:unaliased]'
+  title: '[current-page:title] | [site:name]'
+  twitter_cards_type: summary

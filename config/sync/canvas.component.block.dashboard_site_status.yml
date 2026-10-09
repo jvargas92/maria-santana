@@ -1,0 +1,33 @@
+uuid: c37f302b-04ca-4441-ab67-c48fbf7eca4e
+langcode: en
+status: false
+dependencies:
+  module:
+    - dashboard
+_core:
+  default_config_hash: mxlhjZ99nuoldT36n32IvfJ_5JpOQ4YJpbcRbLtsF1E
+active_version: 16a9a158411bac7a
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: dashboard_site_status
+        label: 'Site Status'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+  0b51e33f5f49694c:
+    settings:
+      default_settings:
+        id: dashboard_site_status
+        label: 'Site Status'
+        label_display: '0'
+        provider: dashboard
+    fallback_metadata:
+      slot_definitions: null
+label: 'Site Status'
+id: block.dashboard_site_status
+provider: dashboard
+source: block
+source_local_id: dashboard_site_status

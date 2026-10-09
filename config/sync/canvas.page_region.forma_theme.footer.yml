@@ -1,0 +1,61 @@
+uuid: 57343f17-9d7b-4bb6-9c7b-f08453038d8f
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_branding_block
+    - canvas.component.sdc.forma_theme.footer
+    - canvas.component.sdc.forma_theme.text
+    - filter.format.canvas_html_block
+  module:
+    - options
+    - text
+  theme:
+    - forma_theme
+_core:
+  default_config_hash: VUvIj0qHfK4IQCHvKhok1rrJVNo3qQbJ7F5xoltbAGA
+id: forma_theme.footer
+region: footer
+theme: forma_theme
+component_tree:
+  '0:46847aad-03eb-46f3-a75d-8997996cd228':
+    uuid: 46847aad-03eb-46f3-a75d-8997996cd228
+    component_id: sdc.forma_theme.footer
+    component_version: ffe29d5274917de1
+    inputs: {  }
+  '0:footer_first:0:f52b2ced-2907-48c2-bd35-d15b582432e6':
+    parent_uuid: 46847aad-03eb-46f3-a75d-8997996cd228
+    slot: footer_first
+    uuid: f52b2ced-2907-48c2-bd35-d15b582432e6
+    component_id: block.system_branding_block
+    component_version: b168140fdcaebae5
+    inputs:
+      label: 'Site branding'
+      label_display: '0'
+      use_site_logo: false
+      use_site_name: true
+      use_site_slogan: false
+  '0:footer_second:0:c893995e-800a-41b0-8c39-94e5bbb300ff':
+    parent_uuid: 46847aad-03eb-46f3-a75d-8997996cd228
+    slot: footer_second
+    uuid: c893995e-800a-41b0-8c39-94e5bbb300ff
+    component_id: sdc.forma_theme.text
+    component_version: 8a33edeeb2e4a925
+    inputs:
+      text:
+        value: '<p>Reporting, analysis and conversation.</p>'
+        format: canvas_html_block
+      text_size: text-sm
+      text_color: default
+  '0:footer_third:0:63ecfaa9-10c3-4cee-81cc-2cad13f7240f':
+    parent_uuid: 46847aad-03eb-46f3-a75d-8997996cd228
+    slot: footer_third
+    uuid: 63ecfaa9-10c3-4cee-81cc-2cad13f7240f
+    component_id: sdc.forma_theme.text
+    component_version: 8a33edeeb2e4a925
+    inputs:
+      text:
+        value: '<p class="text-align-right"><strong>© 2026 Maria Santana </strong>All rights reserved.</p>'
+        format: canvas_html_block
+      text_size: text-xs
+      text_color: default

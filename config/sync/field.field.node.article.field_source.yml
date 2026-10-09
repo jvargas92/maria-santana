@@ -1,0 +1,23 @@
+uuid: cec8d6db-8da3-4a2a-89fa-942787ef223d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.article
+  module:
+    - options
+id: node.article.field_source
+field_name: field_source
+entity_type: node
+bundle: article
+label: Source
+description: 'Where this was originally published. Leave as "This site" for pieces written here.'
+required: false
+translatable: true
+default_value:
+  -
+    value: original
+default_value_callback: ''
+settings: {  }
+field_type: list_string

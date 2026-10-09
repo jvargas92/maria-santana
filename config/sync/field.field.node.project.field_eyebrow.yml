@@ -1,0 +1,21 @@
+uuid: a8ebb3c6-074d-4062-a51a-e50fb8a0a616
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_eyebrow
+    - node.type.project
+_core:
+  default_config_hash: '-ay40i1w7LUl2X0gSRi1Sa8iYIKhUEGqIWdSrlzK6AI'
+id: node.project.field_eyebrow
+field_name: field_eyebrow
+entity_type: node
+bundle: project
+label: Series
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

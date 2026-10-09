@@ -1,0 +1,42 @@
+uuid: 1c307f79-6bd6-4569-bd96-c17968990e1c
+langcode: en
+status: true
+dependencies:
+  module:
+    - maria_social
+active_version: 9b5b19473ae92f3a
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        channel_id:
+          required: true
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: UCBR8-60-B28hp2BmDPdntcQ
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        title:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Latest videos'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'YouTube channel feed'
+id: sdc.maria_social.youtube-feed
+provider: maria_social
+source: sdc
+source_local_id: 'maria_social:youtube-feed'

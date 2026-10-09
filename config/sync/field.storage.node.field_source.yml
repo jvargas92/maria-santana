@@ -1,0 +1,39 @@
+uuid: 9ad341b8-5e0b-49ca-8a12-dc145fa71a1b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_source
+field_name: field_source
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: original
+      label: 'This site'
+    -
+      value: cnn
+      label: CNN
+    -
+      value: substack
+      label: Substack
+    -
+      value: instagram
+      label: Instagram
+    -
+      value: threads
+      label: Threads
+    -
+      value: youtube
+      label: YouTube
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

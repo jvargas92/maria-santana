@@ -1,0 +1,17 @@
+uuid: cb3ec3b0-da36-42b7-b3c4-0af48fa564df
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.sdc.maria_social.instagram-post
+    - canvas.component.sdc.maria_social.source-post
+    - canvas.component.sdc.maria_social.threads-post
+    - canvas.component.sdc.maria_social.youtube-feed
+name: Social
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.maria_social.instagram-post
+  - sdc.maria_social.source-post
+  - sdc.maria_social.threads-post
+  - sdc.maria_social.youtube-feed

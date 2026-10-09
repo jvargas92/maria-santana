@@ -1,0 +1,33 @@
+uuid: 42fac0f6-6d8b-4c73-89c4-e33b8f75d535
+langcode: en
+status: false
+dependencies:
+  module:
+    - navigation
+_core:
+  default_config_hash: KbFiWVU0Pege3ngT0CNS2l9NN3CxoUBbMiyo4ZsCLXs
+active_version: a2ddb9f467280871
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: navigation_shortcuts
+        label: 'Navigation Shortcuts'
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+  2891751bf7069a8f:
+    settings:
+      default_settings:
+        id: navigation_shortcuts
+        label: 'Navigation Shortcuts'
+        label_display: '0'
+        provider: navigation
+    fallback_metadata:
+      slot_definitions: null
+label: 'Navigation Shortcuts'
+id: block.navigation_shortcuts
+provider: navigation
+source: block
+source_local_id: navigation_shortcuts

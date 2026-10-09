@@ -1,0 +1,40 @@
+_core:
+  default_config_hash: YLyaxFHFUutVkDm7EBj9rufllzT5wZKTmcdJeMFr4mk
+login_path: ''
+login_message: 'You must be an authorized user to access this site.'
+login_destination: ''
+requirements:
+  response_status:
+    id: response_status
+    negate: false
+    status_codes: {  }
+  request_path:
+    id: request_path
+    negate: false
+    pages: ''
+  webform:
+    id: webform
+    negate: false
+    context_mapping: {  }
+    webforms: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles: {  }
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    context_mapping:
+      taxonomy_term: '@taxonomy_term.taxonomy_term_route_context:taxonomy_term'
+    bundles: {  }
+  'entity_bundle:webform_submission':
+    id: 'entity_bundle:webform_submission'
+    negate: false
+    context_mapping:
+      webform_submission: '@webform.webform_submission_route_context:webform_submission'
+    bundles: {  }
+extra:
+  include_403: false
+  include_404: false

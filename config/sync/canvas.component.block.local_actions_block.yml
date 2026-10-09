@@ -1,0 +1,31 @@
+uuid: 207714e5-cbff-4912-8f36-ca6fa820a9d4
+langcode: en
+status: false
+dependencies: {  }
+_core:
+  default_config_hash: xFCyrO-LTpDX5plQWo77i3VIGTiITGRBcI7gVpvNsnQ
+active_version: 8e3ae21ee61ff56d
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+    fallback_metadata:
+      slot_definitions: null
+  29753123eb31b8ab:
+    settings:
+      default_settings:
+        id: local_actions_block
+        label: 'Primary admin actions'
+        label_display: '0'
+        provider: core
+    fallback_metadata:
+      slot_definitions: null
+label: 'Primary admin actions'
+id: block.local_actions_block
+provider: core
+source: block
+source_local_id: local_actions_block

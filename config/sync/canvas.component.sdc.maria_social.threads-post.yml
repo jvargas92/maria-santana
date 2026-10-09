@@ -1,0 +1,35 @@
+uuid: 4eabd893-5c1c-4a5a-adf0-0f2ab17fdc8f
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - maria_social
+active_version: e2c2aaf00fcf4c34
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        url:
+          required: true
+          field_type: link
+          field_storage_settings: {  }
+          field_instance_settings:
+            title: 0
+            link_type: 16
+          field_widget: link_default
+          default_value:
+            -
+              uri: 'https://www.threads.com/@username/post/AbC123xyz'
+              options: {  }
+          expression: ℹ︎link␟url
+          derived_schema_metadata:
+            string_shape:
+              format: uri
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Threads post'
+id: sdc.maria_social.threads-post
+provider: maria_social
+source: sdc
+source_local_id: 'maria_social:threads-post'

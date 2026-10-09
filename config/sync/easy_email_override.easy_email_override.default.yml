@@ -1,0 +1,22 @@
+uuid: 33f6f7a6-db92-419f-970d-79ee344190a2
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qFmsf56OAvaSiK1a1QRUwFMXXuPnx0WyJnsuaub2u8k
+id: default
+label: Default
+module: '*'
+key: '*'
+easy_email_type: default
+param_map: {  }
+copied_fields:
+  from: true
+  reply_to: true
+  to: true
+  cc: true
+  bcc: true
+  subject: true
+  body_html: true
+  body_plain: true
+  attachments: true

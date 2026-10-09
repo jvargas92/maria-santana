@@ -1,0 +1,63 @@
+uuid: 8197120f-cced-43ae-a83b-966f1e45a76f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.article.feeds_item
+    - field.field.node.article.field_author
+    - field.field.node.article.field_content
+    - field.field.node.article.field_description
+    - field.field.node.article.field_featured_image
+    - field.field.node.article.field_seo_analysis
+    - field.field.node.article.field_seo_description
+    - field.field.node.article.field_seo_image
+    - field.field.node.article.field_seo_title
+    - field.field.node.article.field_source
+    - field.field.node.article.field_source_url
+    - node.type.article
+  module:
+    - user
+_core:
+  default_config_hash: CLqm06dGZ2Pz3No3pCxduYJrPtg5MGZuqSoF0K4QXHg
+id: node.article.card
+targetEntityType: node
+bundle: article
+mode: card
+content:
+  content_moderation_control:
+    settings: {  }
+    third_party_settings: {  }
+    weight: -20
+    region: content
+  field_description:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_featured_image:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: 16_9_medium
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  feeds_item: true
+  field_author: true
+  field_content: true
+  field_seo_analysis: true
+  field_seo_description: true
+  field_seo_image: true
+  field_seo_title: true
+  field_source: true
+  field_source_url: true

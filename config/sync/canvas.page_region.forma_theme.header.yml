@@ -1,0 +1,58 @@
+uuid: 46ad9e13-5460-4158-958c-974765628106
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_branding_block
+    - canvas.component.block.system_menu_block.main
+    - canvas.component.block.system_menu_block.social
+    - canvas.component.sdc.forma_theme.navbar
+  theme:
+    - forma_theme
+_core:
+  default_config_hash: fZZI-jwDgRxCkTYbf4kF8io_08nWO0IPTiHZ2dGEgTQ
+id: forma_theme.header
+region: header
+theme: forma_theme
+component_tree:
+  '0:9d4f46dd-0e77-429f-b63e-e91a7fb7bd12':
+    uuid: 9d4f46dd-0e77-429f-b63e-e91a7fb7bd12
+    component_id: sdc.forma_theme.navbar
+    component_version: c68c0b8e47c365e7
+    inputs: {  }
+  '0:links:0:20767334-6a54-42f0-88fe-20e304af47a3':
+    parent_uuid: 9d4f46dd-0e77-429f-b63e-e91a7fb7bd12
+    slot: links
+    uuid: 20767334-6a54-42f0-88fe-20e304af47a3
+    component_id: block.system_menu_block.social
+    component_version: 838d76f066aff791
+    inputs:
+      label: 'Social links'
+      label_display: '0'
+      level: 1
+      depth: null
+      expand_all_items: false
+  '0:logo:0:344f2633-5910-4dcf-b36e-9f987a0a1922':
+    parent_uuid: 9d4f46dd-0e77-429f-b63e-e91a7fb7bd12
+    slot: logo
+    uuid: 344f2633-5910-4dcf-b36e-9f987a0a1922
+    component_id: block.system_branding_block
+    component_version: b168140fdcaebae5
+    inputs:
+      label: 'Site branding'
+      label_display: '0'
+      use_site_logo: false
+      use_site_name: true
+      use_site_slogan: false
+  '0:navigation:0:7a7b27fa-35f2-44da-81e8-f43db578871a':
+    parent_uuid: 9d4f46dd-0e77-429f-b63e-e91a7fb7bd12
+    slot: navigation
+    uuid: 7a7b27fa-35f2-44da-81e8-f43db578871a
+    component_id: block.system_menu_block.main
+    component_version: 023ff7ba63f80798
+    inputs:
+      label: 'Main navigation'
+      label_display: '0'
+      level: 1
+      depth: null
+      expand_all_items: false

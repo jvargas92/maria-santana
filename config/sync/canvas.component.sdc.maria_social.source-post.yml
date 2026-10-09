@@ -1,0 +1,42 @@
+uuid: 45d606d6-df2d-4189-b0a3-c990260e567f
+langcode: en
+status: true
+dependencies:
+  module:
+    - maria_social
+active_version: 2a83cacc59618bcf
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        url:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'https://mariasantanamedia.substack.com/p/off-script-nobody-tells-you-how-weird'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        link_label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Read the full post on Substack'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Original post'
+id: sdc.maria_social.source-post
+provider: maria_social
+source: sdc
+source_local_id: 'maria_social:source-post'

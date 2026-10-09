@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
+langcode: en
+uuid: fe741e34-9a09-4e73-bed2-17e35c752df2
+name: 'Maria Santana Media'
+mail: noreply@mariasantanamedia.com
+slogan: ''
+page:
+  403: /user/login
+  404: /page/2
+  front: /home
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

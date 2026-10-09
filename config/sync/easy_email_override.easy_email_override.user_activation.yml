@@ -1,0 +1,25 @@
+uuid: 39db7076-b6d0-4829-a617-d360ce731dd5
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: VvlVD-j0xxfplBQxpcJhpeTc6AuM5c2d9tc2M-nc728
+id: user_activation
+label: 'User: Account Activation'
+module: user
+key: status_activated
+easy_email_type: user_activation
+param_map:
+  -
+    source: account
+    destination: recipient_uid
+copied_fields:
+  from: false
+  reply_to: false
+  to: false
+  cc: false
+  bcc: false
+  subject: false
+  body_html: false
+  body_plain: false
+  attachments: false

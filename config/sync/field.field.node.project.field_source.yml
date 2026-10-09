@@ -1,0 +1,23 @@
+uuid: f38421f4-6e68-4ee3-9fea-bb5c26f5bb9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source
+    - node.type.project
+  module:
+    - options
+id: node.project.field_source
+field_name: field_source
+entity_type: node
+bundle: project
+label: Source
+description: 'Where this was originally published. Leave as "This site" for pieces written here.'
+required: false
+translatable: true
+default_value:
+  -
+    value: original
+default_value_callback: ''
+settings: {  }
+field_type: list_string

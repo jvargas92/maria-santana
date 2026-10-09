@@ -1,0 +1,23 @@
+uuid: 0ee81b10-3356-4344-bc8f-31a6e2ab6031
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_source_url
+    - node.type.project
+  module:
+    - link
+id: node.project.field_source_url
+field_name: field_source_url
+entity_type: node
+bundle: project
+label: 'Source URL'
+description: 'Address of the original post. For Instagram and Threads this is the post link, and the post is embedded on this page. For Substack and CNN the card links straight out to it.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link
