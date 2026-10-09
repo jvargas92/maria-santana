@@ -18,12 +18,12 @@ props:
     orientation:
       type: string
       title: Shape
-      description: 'Reel and video links are shown portrait automatically. Choose Portrait for a video whose link uses the /p/ form, which Instagram would otherwise render as a square feed card.'
+      description: 'How wide the card sits. Instagram crops the media to 4:5 inside its own iframe whatever we do, so a 9:16 reel cannot be shown full height here; Tall just narrows the column so the 4:5 crop reads as portrait rather than wide. Reel and video links pick Tall automatically.'
       enum:
         - auto
-        - portrait
-        - square
+        - tall
+        - wide
       default: auto
       examples:
         - auto
-        - portrait
+        - tall

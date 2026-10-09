@@ -3,14 +3,20 @@
  * @file
  * One embedded Instagram post, reel or video.
  *
- * Instagram serves two different embed presentations, chosen by the link: a
- * /p/ link renders the square feed card, and a /reel/ link renders the post
- * portrait. A reel is reachable at both, so a video pasted in its /p/ form
- * comes out square-cropped. The portrait shape rewrites the link to /reel/ to
- * get the taller presentation.
+ * A vertical reel cannot be shown at 9:16 through this component, and that is
+ * Instagram's doing, not ours. Its embed hardcodes the media container to
+ * `padding-bottom: 125%`, a 4:5 crop, inside a cross-origin iframe that no CSS
+ * of ours can reach. The embed also ships a cover image rather than a video
+ * element, so it is a picture that links to Instagram, not a player. For a
+ * reel shown full height and actually playable, host the video on the site or
+ * on YouTube instead of embedding it from here.
  *
- * Instagram's embed script sizes the iframe from the width available to it,
- * so a portrait post also needs a narrower column, or it grows extremely tall.
+ * What the shape does control is the width of the column. Instagram's script
+ * sizes its iframe from the width available, so the "tall" shape narrows the
+ * card, which makes the 4:5 crop read as portrait instead of as a wide block,
+ * and keeps the card from running extremely tall on a desktop screen. It also
+ * uses the /reel/ form of the permalink, which is the address Instagram
+ * documents for video.
  */
 #}
 {{ attach_library('maria_social/social_embed') }}
@@ -18,13 +24,13 @@
 
 {% set shape = orientation|default('auto') %}
 {% if shape == 'auto' %}
-  {# A reel or video link is portrait by nature. #}
-  {% set shape = ('/reel/' in url or '/tv/' in url) ? 'portrait' : 'square' %}
+  {# A reel or video link gets the narrow column by default. #}
+  {% set shape = ('/reel/' in url or '/tv/' in url) ? 'tall' : 'wide' %}
 {% endif %}
 
-{% set permalink = shape == 'portrait' ? url|replace({'/p/': '/reel/'}) : url %}
+{% set permalink = shape == 'tall' ? url|replace({'/p/': '/reel/'}) : url %}
 
-<div class="social-embed social-embed--instagram{{ shape == 'portrait' ? ' social-embed--portrait' : '' }}">
+<div class="social-embed social-embed--instagram{{ shape == 'tall' ? ' social-embed--portrait' : '' }}">
   <blockquote
     class="instagram-media"
     data-instgrm-permalink="{{ permalink }}"
