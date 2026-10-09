@@ -78,6 +78,14 @@ final class FeedsSocialImportSubscriber implements EventSubscriberInterface {
       $node->set('moderation_state', 'published');
     }
 
+    if ($node->hasField('field_content') && !$node->get('field_content')->isEmpty()) {
+      $body = (string) $node->get('field_content')->value;
+      $cleaned = $this->stripPublisherChrome($body);
+      if ($cleaned !== $body) {
+        $node->get('field_content')->value = $cleaned;
+      }
+    }
+
     if (!$node->hasField('field_featured_image') || !$node->get('field_featured_image')->isEmpty()) {
       return;
     }
@@ -201,6 +209,65 @@ final class FeedsSocialImportSubscriber implements EventSubscriberInterface {
       ]);
       return NULL;
     }
+  }
+
+
+  /**
+   * Removes the publisher's own furniture from an imported post body.
+   *
+   * Substack ends every post with a subscribe widget: nested divs wrapping a
+   * form, two inputs and the line "Thanks for reading! Subscribe for free to
+   * receive new posts and support my work." A text format strips the form and
+   * the divs but keeps that paragraph, so filtering alone would leave an
+   * orphaned call to action, pointing at a form that is no longer there, in
+   * every article. Removing the whole subtree here takes the text with it.
+   */
+  private function stripPublisherChrome(string $html): string {
+    if (trim($html) === '') {
+      return $html;
+    }
+
+    $dom = new \DOMDocument('1.0', 'UTF-8');
+    $previous = libxml_use_internal_errors(TRUE);
+    // The meta charset keeps multi-byte characters intact, which matters for
+    // the Spanish-language posts.
+    $loaded = $dom->loadHTML(
+      '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body>' . $html . '</body></html>'
+    );
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous);
+    if (!$loaded) {
+      return $html;
+    }
+
+    $xpath = new \DOMXPath($dom);
+    // Anything subscription related, plus the form controls themselves.
+    $unwanted = $xpath->query(
+      '//form | //input | //button'
+      . ' | //*[@data-component-name="SubscribeWidgetToDOM"]'
+      . ' | //*[contains(@class, "subscri")]'
+    );
+    if ($unwanted === FALSE) {
+      return $html;
+    }
+    // Materialise first: removing an ancestor detaches its descendants, and
+    // iterating a live node list while mutating it skips entries.
+    foreach (iterator_to_array($unwanted) as $node) {
+      if ($node->parentNode !== NULL) {
+        $node->parentNode->removeChild($node);
+      }
+    }
+
+    $body = $dom->getElementsByTagName('body')->item(0);
+    if ($body === NULL) {
+      return $html;
+    }
+    $out = '';
+    foreach ($body->childNodes as $child) {
+      $out .= (string) $dom->saveHTML($child);
+    }
+
+    return trim($out);
   }
 
 }

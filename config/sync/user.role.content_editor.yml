@@ -5,6 +5,7 @@ dependencies:
   config:
     - dashboard.dashboard.welcome
     - filter.format.content_format
+    - filter.format.imported_content
     - media.type.document
     - media.type.image
     - media.type.remote_video
@@ -72,6 +73,7 @@ permissions:
   - 'use media svg_image bulk upload form'
   - 'use media video bulk upload form'
   - 'use text format content_format'
+  - 'use text format imported_content'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view own unpublished content'

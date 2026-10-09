@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.feeds_item
     - field.field.node.article.field_author
+    - field.field.node.article.field_content
     - field.field.node.article.field_description
     - field.field.node.article.field_source_url
     - node.type.article
@@ -81,4 +82,11 @@ mappings:
       uri: url
       title: ''
     settings: {  }
+    unique: {  }
+  -
+    target: field_content
+    map:
+      value: content
+    settings:
+      format: imported_content
     unique: {  }

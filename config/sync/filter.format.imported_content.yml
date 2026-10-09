@@ -1,0 +1,29 @@
+uuid: cf3f20aa-b39c-4f61-9af6-7761da59a15f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Imported post content'
+format: imported_content
+weight: 2
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<p> <br> <hr> <h2> <h3> <h4> <strong> <b> <em> <i> <u> <s> <blockquote> <cite> <a href title> <ul> <ol start> <li> <img src alt title width height> <figure> <figcaption> <table> <thead> <tbody> <tr> <th rowspan colspan> <td rowspan colspan> <caption> <code> <pre>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  filter_image_lazy_load:
+    id: filter_image_lazy_load
+    provider: filter
+    status: true
+    weight: 15
+    settings: {  }
