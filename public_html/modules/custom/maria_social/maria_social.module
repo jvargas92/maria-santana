@@ -21,3 +21,58 @@ function maria_social_theme_registry_alter(array &$theme_registry): void {
     $theme_registry['menu__social']['template'] = 'menu--social';
   }
 }
+
+/**
+ * Implements hook_modules_installed().
+ *
+ * A Feeds feed is a content entity, so configuration import creates the
+ * "substack" feed type but never the feed itself. Hooking module installation
+ * catches the moment Feeds is enabled, which on a fresh environment happens
+ * during the configuration import, and leaves the feed ready without a manual
+ * step. It deliberately still runs while configuration is syncing: sync owns
+ * configuration, and this is content.
+ */
+function maria_social_modules_installed(array $modules, bool $is_syncing): void {
+  if (in_array('feeds', $modules, TRUE)) {
+    maria_social_ensure_substack_feed();
+  }
+}
+
+/**
+ * Makes sure the Substack feed exists, and returns it.
+ *
+ * Safe to call repeatedly: it returns the existing feed untouched rather than
+ * adding a second one, so it can be driven from module installation, from a
+ * post-update hook, or by hand on an environment that already has Feeds.
+ *
+ * @return \Drupal\feeds\FeedInterface|null
+ *   The feed, or NULL if Feeds is not enabled or the feed type is missing.
+ */
+function maria_social_ensure_substack_feed(): ?object {
+  // Her publication's RSS feed. Public, and the same on every environment.
+  $source = 'https://mariasantanamedia.substack.com/feed';
+
+  if (!\Drupal::moduleHandler()->moduleExists('feeds')) {
+    return NULL;
+  }
+  $storage = \Drupal::entityTypeManager()->getStorage('feeds_feed');
+  if (!\Drupal::entityTypeManager()->getStorage('feeds_feed_type')->load('substack')) {
+    return NULL;
+  }
+
+  $existing = $storage->loadByProperties(['type' => 'substack']);
+  if ($existing !== []) {
+    return reset($existing);
+  }
+
+  $feed = $storage->create([
+    'type' => 'substack',
+    'title' => 'Maria Santana on Substack',
+    'source' => $source,
+    'uid' => 1,
+    'status' => 1,
+  ]);
+  $feed->save();
+
+  return $feed;
+}
