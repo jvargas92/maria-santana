@@ -1,0 +1,21 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Original post
+description: Shows the post a node came from. Instagram and Threads posts are embedded in place after the visitor consents; everything else becomes a link out, named after where it leads. Bind it to the node's Source URL field and it renders nothing on pieces written here.
+group: Social
+status: stable
+props:
+  type: object
+  properties:
+    url:
+      type: string
+      title: Source URL
+      description: Bind this to the node's "Source URL" field.
+      examples:
+        - https://mariasantanamedia.substack.com/p/off-script-nobody-tells-you-how-weird
+        - https://www.instagram.com/p/AbC123xyz/
+    link_label:
+      type: string
+      title: Link label
+      description: Overrides the wording of the link. Ignored for posts that embed.
+      examples:
+        - Read the full post on Substack

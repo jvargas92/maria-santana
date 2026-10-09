@@ -1,0 +1,34 @@
+{#
+/**
+ * @file
+ * Renders the post a node was sourced from, or nothing when there isn't one.
+ *
+ * Instagram and Threads publish embed scripts, so a post from either is shown
+ * in place through this module's matching component, consent-gated by Klaro.
+ * Nothing else can be embedded, so those become a link that names where it
+ * goes, which reads better than "read more" and sets expectations about
+ * leaving the site.
+ */
+#}
+{% if url is not empty %}
+  {# Index 2 of an absolute URL split on "/" is the host. #}
+  {% set host = url|trim|lower|split('/')[2]|default('') %}
+
+  {% if 'instagram.com' in host %}
+    {% include 'maria_social:instagram-post' with { url: url } only %}
+
+  {% elseif 'threads.com' in host or 'threads.net' in host %}
+    {% include 'maria_social:threads-post' with { url: url } only %}
+
+  {% else %}
+    {% set label = link_label|default(
+      'substack.com' in host ? 'Read the full post on Substack'|t :
+      'cnn.com' in host ? 'Read this on CNN'|t :
+      ('youtube.com' in host or 'youtu.be' in host) ? 'Watch on YouTube'|t :
+      'Read the original'|t
+    ) %}
+    <p class="social-source-link">
+      <a href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>
+    </p>
+  {% endif %}
+{% endif %}

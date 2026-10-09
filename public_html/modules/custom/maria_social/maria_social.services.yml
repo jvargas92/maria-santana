@@ -1,0 +1,15 @@
+services:
+  logger.channel.maria_social:
+    parent: logger.channel_base
+    arguments: ['maria_social']
+
+  maria_social.feeds_import_subscriber:
+    class: Drupal\maria_social\EventSubscriber\FeedsSocialImportSubscriber
+    arguments:
+      - '@http_client'
+      - '@file_system'
+      - '@file.repository'
+      - '@entity_type.manager'
+      - '@logger.channel.maria_social'
+    tags:
+      - { name: event_subscriber }
