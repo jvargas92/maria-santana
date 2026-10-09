@@ -62,26 +62,31 @@ mappings:
     target: created
     map:
       value: timestamp
-    settings: {  }
+    settings:
+      language: null
+      timezone: UTC
     unique: {  }
   -
     target: field_description
     map:
       value: description
-    settings: {  }
+    settings:
+      language: null
     unique: {  }
   -
     target: field_author
     map:
       value: author_name
-    settings: {  }
+    settings:
+      language: null
     unique: {  }
   -
     target: field_source_url
     map:
       uri: url
       title: ''
-    settings: {  }
+    settings:
+      language: null
     unique: {  }
   -
     target: field_content
@@ -89,4 +94,5 @@ mappings:
       value: content
     settings:
       format: imported_content
+      language: null
     unique: {  }

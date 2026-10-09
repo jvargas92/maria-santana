@@ -76,3 +76,58 @@ function maria_social_ensure_substack_feed(): ?object {
 
   return $feed;
 }
+
+/**
+ * Forces every item in the Substack feed to be processed again.
+ *
+ * A plain feeds:import will not revisit an item it has already seen: the HTTP
+ * fetcher sends If-Modified-Since and takes the 304, and the processor skips
+ * items whose hash is unchanged. So after a mapping changes, existing nodes
+ * keep their old values and the import reports "no new items", which looks
+ * like the mapping did not work. This clears the download cache and lifts the
+ * hash check for one run, so the feed updates the nodes in place, keeping
+ * their IDs and aliases.
+ *
+ * @return string
+ *   A short report, suitable for printing from drush.
+ */
+function maria_social_reimport_substack(): string {
+  if (!\Drupal::moduleHandler()->moduleExists('feeds')) {
+    return 'Feeds is not enabled.';
+  }
+  $feed_type = \Drupal::entityTypeManager()->getStorage('feeds_feed_type')->load('substack');
+  if (!$feed_type) {
+    return 'The "substack" feed type is missing. Import configuration first.';
+  }
+
+  // Report what the feed type will actually do, so a missing mapping shows up
+  // here rather than looking like a failed import.
+  $targets = array_column($feed_type->getMappings(), 'target');
+  if (!in_array('field_content', $targets, TRUE)) {
+    return 'The feed type has no field_content mapping, so bodies cannot be '
+      . 'imported. Run config:import first. Current targets: '
+      . implode(', ', $targets);
+  }
+
+  $feed = maria_social_ensure_substack_feed();
+  if (!$feed) {
+    return 'No Substack feed to import.';
+  }
+
+  $config = $feed_type->getProcessor()->getConfiguration();
+  $restore = $config['skip_hash_check'];
+  $config['skip_hash_check'] = TRUE;
+  $feed_type->set('processor_configuration', $config)->save();
+  \Drupal::service('cache.feeds_download')->deleteAll();
+
+  try {
+    $feed->import();
+  }
+  finally {
+    // Always put the hash check back, even if the import threw.
+    $config['skip_hash_check'] = $restore;
+    $feed_type->set('processor_configuration', $config)->save();
+  }
+
+  return 'Re-imported ' . $feed->getSource() . '. Check the feed\'s report for how many items were updated.';
+}
