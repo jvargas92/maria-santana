@@ -1,8 +1,7 @@
 name: Maria Santana social embeds
 type: module
-description: 'Social content for the site: Canvas components and a field formatter that embed YouTube, Instagram and Threads posts only after visitor consent (Klaro), plus the glue that turns the Substack feed into articles.'
+description: 'Social content for the site: Canvas components that embed YouTube, Instagram and Threads posts only after visitor consent (Klaro), plus the glue that turns the Substack feed into articles. The import runs only where Feeds is enabled.'
 package: Custom
 core_version_requirement: ^11
 dependencies:
-  - feeds:feeds
   - media:media
