@@ -23,7 +23,9 @@ function maria_email_library_info_alter(array &$libraries, string $extension): v
     return;
   }
   $path = \Drupal::service('extension.list.module')->getPath('maria_email');
-  $libraries['style-tag-styles']['css']['theme']['/' . $path . '/css/easy-email-header.css'] = [
-    'weight' => 10,
-  ];
+  foreach (['easy-email-header.css', 'easy-email-mobile.css', 'easy-email-dark-mode.css'] as $delta => $file) {
+    $libraries['style-tag-styles']['css']['theme']['/' . $path . '/css/' . $file] = [
+      'weight' => 10 + $delta,
+    ];
+  }
 }

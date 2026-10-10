@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Restores the narrow-screen padding Easy Email Theme meant to apply.
+ *
+ * The theme ships these rules itself, in style-tag-styles.css, written with a
+ * child selector. Its template prints that stylesheet through Twig's escaping,
+ * so they reach the inbox as .email-body &gt; .content and never match
+ * anything, leaving desktop padding on a phone. Same rules, descendant
+ * selectors, so they survive the trip.
+ */
+
+@media screen and (max-width: 600px) {
+  .email-body .content {
+    padding: 10px 20px !important;
+  }
+}

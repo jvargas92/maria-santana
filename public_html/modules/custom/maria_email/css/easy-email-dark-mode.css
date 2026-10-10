@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Dark mode for the HTML emails this site sends.
+ *
+ * Three constraints shape every line below.
+ *
+ * The mail system inlines stylesheet rules into style attributes, because
+ * symfony_mailer_lite runs the message through CssToInlineStyles. An inline
+ * style beats a rule in a <style> block, so each override here needs
+ * !important to land.
+ *
+ * Rules inside an @media block are stripped before that inlining and survive
+ * only in the <style> block, which is the one place a dark mode can live at
+ * all: a style attribute cannot hold a media query.
+ *
+ * Easy Email Theme prints that <style> block through Twig's escaping, so a
+ * selector containing > arrives as &gt; and the rule is dead on delivery.
+ * Every selector below is a descendant selector, and nothing uses a quote,
+ * which would arrive as &quot; for the same reason.
+ *
+ * The outer template already declares color-scheme light dark, which asks a
+ * client not to invert colours on its own. Until now nothing answered that
+ * promise with dark colours, which is how a message ended up dark on dark.
+ */
+
+@media (prefers-color-scheme: dark) {
+  /* The page behind the card. The body element carries both a bgcolor
+     attribute and an inline background, so the id is needed to outrank it. */
+  #body {
+    background-color: #0a0f1c !important;
+  }
+
+  .email-body-wrapper {
+    background-color: #0a0f1c !important;
+  }
+
+  /* The card. A drop shadow is invisible against a dark page, so a hairline
+     border is what keeps it reading as a card. */
+  .email-body {
+    background-color: #16203a !important;
+    color: #eef1f7 !important;
+    border: 1px solid #3a4870 !important;
+    box-shadow: none !important;
+  }
+
+  /* Text colour is set explicitly rather than left to inherit, because a
+     client that rewrites only some colours is exactly how black text ends up
+     on a black background. Backgrounds are left alone so that deliberately
+     coloured content in a message body survives. */
+  .email-body,
+  .email-body .content,
+  .email-body .content p,
+  .email-body .content div,
+  .email-body .content span,
+  .email-body .content li,
+  .email-body .content td,
+  .email-body .content th,
+  .email-body .content h1,
+  .email-body .content h2,
+  .email-body .content h3,
+  .email-body .content h4,
+  .email-body .content h5,
+  .email-body .content h6,
+  .email-body .content strong,
+  .email-body .content em {
+    color: #eef1f7 !important;
+  }
+
+  /* The brand red is too dark to read against navy, so links take a
+     lightened tint of it. */
+  .email-body a {
+    color: #ff9ca4 !important;
+  }
+
+  /* The themed buttons set their own saturated background, which still reads
+     on a dark card. Keep the label white in case a client darkened it. */
+  .email-body .button,
+  .email-body a.button {
+    color: #ffffff !important;
+  }
+}

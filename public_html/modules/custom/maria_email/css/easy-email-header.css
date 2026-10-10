@@ -5,11 +5,16 @@
  * Inlined into the email's <style> tag by
  * easy_email_theme_preprocess_easy_email_body_html(), so the selector has to
  * match the markup of easy-email-body-html.html.twig.
+ *
+ * The selector is deliberately a descendant selector, not the child selector
+ * the markup would suggest. That template prints the stylesheet through Twig's
+ * escaping, so a > arrives in the sent mail as &gt; and kills the whole rule.
+ * The theme's own responsive rules are broken this way; ours must not be.
  */
 
-.email-body > .header {
+.email-body .header {
   display: none !important;
   padding: 0 !important;
-  /* Outlook's Word rendering engine ignores display on block elements. */
+  /* The Word rendering engine in Outlook ignores display on block elements. */
   mso-hide: all;
 }
