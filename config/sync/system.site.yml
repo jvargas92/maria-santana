@@ -3,7 +3,7 @@ _core:
 langcode: en
 uuid: fe741e34-9a09-4e73-bed2-17e35c752df2
 name: 'Maria Santana Media'
-mail: noreply@mariasantanamedia.com
+mail: info@mariasantanamedia.com
 slogan: ''
 page:
   403: /user/login
