@@ -38,13 +38,12 @@ elements: |-
     '#title_display': invisible
     '#placeholder': Message
     '#required': true
+  telephone:
+    '#type': tel
+    '#title': Telephone
+    '#description': '<p>Add a phone number</p>'
   captcha:
     '#type': captcha
-  privacy_policy:
-    '#type': checkbox
-    '#title': 'Privacy policy'
-    '#description': '<p>You agree to our <a href="/privacy">privacy policy</a>.</p>'
-    '#title_display': none
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
