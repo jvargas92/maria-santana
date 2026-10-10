@@ -40,3 +40,8 @@ $RECYCLE.BIN/
 
 /.vscode
 /.ddev
+# Database dumps. A site dump carries the users table, so it must never be
+# committed, let alone pushed.
+*.sql
+*.sql.gz
+*.sql.zip
