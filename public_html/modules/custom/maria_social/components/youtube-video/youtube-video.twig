@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * One YouTube video, in a frame whose shape we control.
+ *
+ * This exists because Instagram's embed cannot show a vertical video at 9:16:
+ * it hardcodes a 4:5 crop inside a cross-origin iframe and serves a cover
+ * image rather than a player. YouTube hands over a real iframe player, so a
+ * reel cross-posted as a Short can be shown at its true shape and actually
+ * played on the page.
+ *
+ * Written in Klaro's blocked-until-consent form: data-src rather than src, so
+ * nothing is requested from YouTube before the visitor agrees.
+ */
+#}
+{{ attach_library('maria_social/social_embed') }}
+
+{% set address = url|trim %}
+
+{# Pull the video ID out of whichever address form was pasted. #}
+{% if 'youtu.be/' in address %}
+  {% set id = address|split('youtu.be/')|last %}
+{% elseif '/shorts/' in address %}
+  {% set id = address|split('/shorts/')|last %}
+{% elseif '/embed/' in address %}
+  {% set id = address|split('/embed/')|last %}
+{% elseif '/live/' in address %}
+  {% set id = address|split('/live/')|last %}
+{% elseif 'v=' in address %}
+  {% set id = address|split('v=')|last %}
+{% else %}
+  {% set id = '' %}
+{% endif %}
+
+{# Drop any trailing query, fragment or path segment. #}
+{% set id = id|split('?')|first|split('&')|first|split('#')|first|split('/')|first %}
+
+{% set orientation = shape|default('auto') %}
+{% if orientation == 'auto' %}
+  {% set orientation = '/shorts/' in address ? 'vertical' : 'wide' %}
+{% endif %}
+
+{# A YouTube ID is eleven URL-safe characters. Anything else is not an ID, and
+   must not be pasted into an address. #}
+{% if id matches '/^[A-Za-z0-9_-]{11}$/' %}
+  <div class="social-embed{{ orientation == 'vertical' ? ' social-embed--vertical' : '' }}">
+    <div class="social-embed__frame{{ orientation == 'vertical' ? ' social-embed__frame--vertical' : '' }}">
+      <iframe
+        data-name="youtube"
+        data-src="https://www.youtube-nocookie.com/embed/{{ id }}"
+        title="{{ title|default('YouTube video'|t) }}"
+        loading="lazy"
+        allow="accelerometer; encrypted-media; picture-in-picture; fullscreen"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+{% endif %}

@@ -44,3 +44,17 @@
 .social-embed--portrait {
   max-width: 22rem;
 }
+
+/*
+ * A vertical video, such as a reel cross-posted to YouTube as a Short. The
+ * frame carries the real 9:16 shape, which Instagram's own embed will not do,
+ * and the narrower column stops it towering over everything else on a desktop
+ * screen.
+ */
+.social-embed--vertical {
+  max-width: 22rem;
+}
+
+.social-embed__frame--vertical {
+  aspect-ratio: 9 / 16;
+}
