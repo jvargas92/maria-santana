@@ -1,0 +1,35 @@
+{#
+/**
+ * @file
+ * The social platforms as a stack of rows, for a link-in-bio page.
+ *
+ * Available variables:
+ * - rows: one entry per enabled link in the "social" menu, each with a title,
+ *   an already-built url string, and an icon render array or null.
+ *
+ * Each row is a single link rather than a wrapper with a link inside it, so
+ * the whole row is one tab stop and one tap target.
+ */
+#}
+{% if rows is not empty %}
+  <ul class="link-stack">
+    {% for row in rows %}
+      <li class="link-stack__item">
+        <a
+          class="link-stack__link"
+          href="{{ row.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {% if row.icon %}
+            <span class="link-stack__icon" aria-hidden="true">{{ row.icon }}</span>
+          {% endif %}
+          <span class="link-stack__label">{{ row.title }}</span>
+          {# Marks the link as leaving the site, for sighted users. #}
+          <span class="link-stack__chevron" aria-hidden="true">&rarr;</span>
+          <span class="visually-hidden">{{ '(opens in a new tab)'|t }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

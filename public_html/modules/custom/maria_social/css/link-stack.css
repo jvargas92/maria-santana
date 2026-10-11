@@ -1,0 +1,66 @@
+/**
+ * @file
+ * The link-in-bio stack of social platforms.
+ *
+ * Deliberately a light row on a light page rather than an inverted one. The
+ * brand marks are rendered as SVGs with their fill set at build time, so a
+ * hover that flipped the row to navy would leave a navy icon on navy. The
+ * hover tints the row instead, which keeps every mark legible.
+ */
+
+.link-stack {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* Narrow, because a link-in-bio page is read on a phone. */
+  max-width: 26rem;
+  width: 100%;
+}
+
+.link-stack__link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #111c35;
+  border-radius: 0.875rem;
+  background-color: #ffffff;
+  color: #111c35;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.link-stack__link:hover,
+.link-stack__link:focus-visible {
+  background-color: #f2f4f8;
+  transform: translateY(-1px);
+}
+
+.link-stack__link:focus-visible {
+  outline: 3px solid #d01f2f;
+  outline-offset: 2px;
+}
+
+.link-stack__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.link-stack__icon svg {
+  display: block;
+}
+
+.link-stack__label {
+  flex: 1 1 auto;
+}
+
+.link-stack__chevron {
+  flex: 0 0 auto;
+  opacity: 0.55;
+}

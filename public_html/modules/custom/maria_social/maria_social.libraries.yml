@@ -19,3 +19,9 @@ social_embed:
   css:
     component:
       css/social-embed.css: {}
+
+# The link-in-bio stack of platform rows.
+link_stack:
+  css:
+    component:
+      css/link-stack.css: {}

@@ -131,3 +131,14 @@ function maria_social_reimport_substack(): string {
 
   return 'Re-imported ' . $feed->getSource() . '. Check the feed\'s report for how many items were updated.';
 }
+
+/**
+ * Implements hook_theme().
+ */
+function maria_social_theme(): array {
+  return [
+    'maria_social_link_stack' => [
+      'variables' => ['rows' => []],
+    ],
+  ];
+}
