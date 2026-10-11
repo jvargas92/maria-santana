@@ -92,6 +92,7 @@
         "drupal/seo_checklist": "^5.2.4",
         "drupal/simple_sitemap": "^4.2.3",
         "drupal/site_template_helper": "^1.0.3",
+        "drupal/stage_file_proxy": "^4.0",
         "drupal/svg_image": "^3.2.2",
         "drupal/symfony_mailer_lite": "^2.0.4",
         "drupal/tagify": "^1.2.51",
