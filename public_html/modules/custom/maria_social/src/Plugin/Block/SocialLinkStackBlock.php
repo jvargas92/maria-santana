@@ -6,6 +6,7 @@ namespace Drupal\maria_social\Plugin\Block;
 
 use Drupal\Core\Block\Attribute\Block;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Cache\Cache;
 use Drupal\Core\Menu\MenuLinkTreeInterface;
 use Drupal\Core\Menu\MenuTreeParameters;
@@ -84,10 +85,20 @@ final class SocialLinkStackBlock extends BlockBase implements ContainerFactoryPl
         continue;
       }
 
+      // The menu link's own description field is the blurb, so a platform is
+      // still described in one place alongside its address and its icon.
+      $description = trim((string) $link->getDescription());
+
       $rows[] = [
         'title' => $link->getTitle(),
         'url' => $address,
         'icon' => $this->icon($link->getOptions()),
+        'description' => $description,
+        // The blurb sits outside the link, so it is tied back to it for
+        // assistive technology instead of being read as loose text. Generated
+        // here rather than from a loop counter so that two of these blocks on
+        // one page cannot collide.
+        'description_id' => $description === '' ? NULL : Html::getUniqueId('link-stack-description'),
       ];
     }
 

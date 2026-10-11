@@ -4,11 +4,17 @@
  * The social platforms as a stack of rows, for a link-in-bio page.
  *
  * Available variables:
- * - rows: one entry per enabled link in the "social" menu, each with a title,
- *   an already-built url string, and an icon render array or null.
+ * - rows: one entry per enabled link in the "social" menu that has an
+ *   address, each with:
+ *   - title: the platform's name.
+ *   - url: the address, already built.
+ *   - icon: a render array for the brand mark, or null.
+ *   - description: the link's description, used as a blurb, or an empty string.
+ *   - description_id: an id for that blurb, or null when there is none.
  *
- * Each row is a single link rather than a wrapper with a link inside it, so
- * the whole row is one tab stop and one tap target.
+ * Only the icon and the name are inside the link. The blurb sits outside it,
+ * tied back with aria-describedby, so the link's accessible name stays the
+ * platform rather than becoming a whole sentence.
  */
 #}
 {% if rows is not empty %}
@@ -20,15 +26,21 @@
           href="{{ row.url }}"
           target="_blank"
           rel="noopener noreferrer"
+          {% if row.description_id %}aria-describedby="{{ row.description_id }}"{% endif %}
         >
           {% if row.icon %}
             <span class="link-stack__icon" aria-hidden="true">{{ row.icon }}</span>
           {% endif %}
           <span class="link-stack__label">{{ row.title }}</span>
-          {# Marks the link as leaving the site, for sighted users. #}
           <span class="link-stack__chevron" aria-hidden="true">&rarr;</span>
           <span class="visually-hidden">{{ '(opens in a new tab)'|t }}</span>
         </a>
+
+        {% if row.description is not empty %}
+          <p class="link-stack__description" id="{{ row.description_id }}">
+            {{ row.description }}
+          </p>
+        {% endif %}
       </li>
     {% endfor %}
   </ul>

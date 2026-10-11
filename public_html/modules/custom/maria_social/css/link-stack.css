@@ -2,10 +2,14 @@
  * @file
  * The link-in-bio stack of social platforms.
  *
- * Deliberately a light row on a light page rather than an inverted one. The
- * brand marks are rendered as SVGs with their fill set at build time, so a
- * hover that flipped the row to navy would leave a navy icon on navy. The
- * hover tints the row instead, which keeps every mark legible.
+ * The card is the list item, not the link, because only the icon and the name
+ * are the link: the blurb underneath is plain text. For the same reason the
+ * hover tint lands on the link alone. Tinting the whole card would promise
+ * that all of it is clickable.
+ *
+ * Rows stay light rather than inverting on hover. The brand marks are SVGs
+ * with their fill set when they are rendered, so a row that flipped to navy
+ * would leave a navy icon on navy.
  */
 
 .link-stack {
@@ -20,30 +24,33 @@
   width: 100%;
 }
 
+.link-stack__item {
+  border: 1px solid #111c35;
+  border-radius: 0.875rem;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
 .link-stack__link {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 1rem 1.25rem;
-  border: 1px solid #111c35;
-  border-radius: 0.875rem;
-  background-color: #ffffff;
   color: #111c35;
   font-size: 1.0625rem;
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .link-stack__link:hover,
 .link-stack__link:focus-visible {
   background-color: #f2f4f8;
-  transform: translateY(-1px);
 }
 
 .link-stack__link:focus-visible {
   outline: 3px solid #d01f2f;
-  outline-offset: 2px;
+  outline-offset: -3px;
 }
 
 .link-stack__icon {
@@ -63,4 +70,13 @@
 .link-stack__chevron {
   flex: 0 0 auto;
   opacity: 0.55;
+}
+
+/* Sits under the link, inside the same card, and is not part of the link. */
+.link-stack__description {
+  margin: 0;
+  padding: 0 1.25rem 1rem;
+  color: #46506b;
+  font-size: 0.9375rem;
+  line-height: 1.5;
 }
