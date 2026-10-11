@@ -1,0 +1,22 @@
+uuid: a3883461-863e-4b7c-b1d6-15dd58484c4c
+langcode: en
+status: true
+dependencies:
+  module:
+    - maria_social
+active_version: 2af7558d31f8c0f5
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: maria_social_link_stack
+        label: 'Social links, stacked'
+        label_display: '0'
+        provider: maria_social
+    fallback_metadata:
+      slot_definitions: null
+label: 'Social links, stacked'
+id: block.maria_social_link_stack
+provider: maria_social
+source: block
+source_local_id: maria_social_link_stack

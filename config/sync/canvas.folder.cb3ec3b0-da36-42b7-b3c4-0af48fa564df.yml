@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - canvas.component.block.maria_social_link_stack
     - canvas.component.sdc.maria_social.instagram-post
     - canvas.component.sdc.maria_social.source-post
     - canvas.component.sdc.maria_social.threads-post
@@ -12,6 +13,7 @@ name: Social
 configEntityTypeId: component
 weight: 0
 items:
+  - block.maria_social_link_stack
   - sdc.maria_social.instagram-post
   - sdc.maria_social.source-post
   - sdc.maria_social.threads-post
