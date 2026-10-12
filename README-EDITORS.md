@@ -8,6 +8,10 @@ says so.
 If you get stuck, stop and ask rather than guessing. Nothing is urgent enough
 to risk the live site.
 
+Two reassurances before you start. Every save keeps the previous version, so a
+change can be undone. And you cannot delete a video or an article at all — the
+worst you can do is take one off the site, which is reversible.
+
 ---
 
 ## Signing in
@@ -207,9 +211,10 @@ platforms won't work here; use the *Source URL* field on a video instead.
 
 ### One real warning
 
-**Deleting media is permanent.** Unlike videos and articles, deleted media
-cannot be recovered, and anything using that image will be left without one. If
-you're not certain, leave it alone.
+**Deleting media is permanent.** Media is the one thing you can delete and the
+one thing that cannot be brought back — and anything using that image will be
+left without one. If you are not certain, leave it alone: an unused image in the
+library costs nothing.
 
 ---
 
@@ -229,8 +234,10 @@ Every video and article is either a **Draft** (saved, not on the site) or
 
 ## If you make a mistake
 
-**You deleted a video or an article.** Go to **Content → Trash** and restore it.
-Deleted content is kept, not destroyed.
+**You want a video or an article taken off the site.** You can't delete them,
+on purpose — set the state to **Unpublished** and save instead. That removes it
+from the site while keeping it, which is almost always what's wanted. If
+something genuinely needs deleting, ask.
 
 **You want an earlier version back.** Open the item and use the **Revisions**
 tab. Every save keeps the previous version, so you can compare and revert.

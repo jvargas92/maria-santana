@@ -11,7 +11,9 @@ dependencies:
     - media.type.remote_video
     - media.type.svg_image
     - media.type.video
+    - node.type.article
     - node.type.page
+    - node.type.project
     - workflows.workflow.basic_editorial
   module:
     - canvas
@@ -40,10 +42,12 @@ permissions:
   - 'administer menu'
   - 'administer redirects'
   - 'administer url aliases'
+  - 'create article content'
   - 'create canvas_page'
   - 'create document media'
   - 'create image media'
   - 'create page content'
+  - 'create project content'
   - 'create remote_video media'
   - 'create svg_image media'
   - 'create url aliases'
@@ -56,13 +60,17 @@ permissions:
   - 'delete any video media'
   - 'delete canvas_page'
   - 'delete page revisions'
+  - 'edit any article content'
   - 'edit any image media'
   - 'edit any page content'
+  - 'edit any project content'
   - 'edit any remote_video media'
   - 'edit any svg_image media'
   - 'edit any video media'
   - 'edit canvas_page'
   - 'revert all revisions'
+  - 'revert article revisions'
+  - 'revert project revisions'
   - 'schedule publishing of nodes'
   - 'use basic_editorial transition create_new_draft'
   - 'use basic_editorial transition publish'
@@ -76,7 +84,9 @@ permissions:
   - 'use text format imported_content'
   - 'view all revisions'
   - 'view any unpublished content'
+  - 'view article revisions'
   - 'view own unpublished content'
   - 'view own unpublished media'
+  - 'view project revisions'
   - 'view scheduled content'
   - 'view welcome dashboard'
