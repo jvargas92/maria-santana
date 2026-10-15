@@ -193,3 +193,40 @@ select {
   max-width: 100%;
   object-fit: contain;
 }
+
+/**
+ * Hero billboard buttons: fill the interior.
+ *
+ * FormaTheme's buttons are outline-only - the base style sets `border-2` and a
+ * border colour but no background at all, and neither the primary nor the
+ * secondary variant fills the interior. Everywhere else on the site that is
+ * fine, because they sit on a flat light section. In the hero they sit
+ * directly on the photograph, and the hero's overlay_opacity is "0%", so there
+ * is no scrim between the image and the label. The button text also inherits
+ * rather than setting its own colour, so it renders navy on whatever part of
+ * the photo happens to be behind it - which on narrow screens is a different
+ * crop than on desktop. Hence "hard to read on mobile" in either variant.
+ *
+ * Filling the interior with the page background gives the label a consistent
+ * surface instead of the photo: navy on --background measures 15.79:1, and the
+ * red hover state 5.00:1, so both hold up wherever the image crops.
+ *
+ * Scoped by hero-billboard's OWN base classes (`cq-full relative flex
+ * flex-col`), not by its height or flex-position classes, so changing the
+ * hero's height or alignment in Canvas does not silently drop the fill. This
+ * matches exactly one section on the page.
+ *
+ * The hover rule has to be restated: this selector outscores FormaTheme's
+ * `hover:text-secondary` utility, so without it the hover colour change would
+ * simply stop happening.
+ */
+section.cq-full.relative.flex.flex-col :is(a, button).group {
+  background-color: var(--background);
+  color: var(--foreground);
+  border-color: var(--foreground);
+}
+
+section.cq-full.relative.flex.flex-col :is(a, button).group:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}

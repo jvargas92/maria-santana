@@ -8,6 +8,6 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: ''
+  path: logo.png
   use_default: false
 scheme: light

@@ -102,7 +102,7 @@ component_tree:
     inputs:
       label: 'Site branding'
       label_display: '0'
-      use_site_logo: false
+      use_site_logo: true
       use_site_name: true
       use_site_slogan: false
   7a7b27fa-35f2-44da-81e8-f43db578871a:
