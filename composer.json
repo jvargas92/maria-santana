@@ -65,6 +65,7 @@
         "drupal/google_tag": "^2.0.7",
         "drupal/haven_theme": "^1",
         "drupal/honeypot": "^2.2.2",
+        "drupal/imageapi_optimize": "^4.2",
         "drupal/jquery_ui": "^1.8.0",
         "drupal/jquery_ui_resizable": "^2.1.0",
         "drupal/key": "^1.22.0",

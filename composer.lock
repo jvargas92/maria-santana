@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d026d2e29914e554dd85d8c4476df55",
+    "content-hash": "63498e8ceb0f9ce81886aad0ff6500d9",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -5564,6 +5564,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/honeypot",
                 "issues": "https://www.drupal.org/project/issues/honeypot"
+            }
+        },
+        {
+            "name": "drupal/imageapi_optimize",
+            "version": "4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/imageapi_optimize.git",
+                "reference": "4.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/imageapi_optimize-4.2.0.zip",
+                "reference": "4.2.0",
+                "shasum": "4ed7e803f12d01b80f39dc8fb5cbdd618263695d"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "4.2.0",
+                    "datestamp": "1777045534",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "deciphered",
+                    "homepage": "https://www.drupal.org/user/103796"
+                },
+                {
+                    "name": "jcisio",
+                    "homepage": "https://www.drupal.org/user/210762"
+                },
+                {
+                    "name": "steven jones",
+                    "homepage": "https://www.drupal.org/user/99644"
+                }
+            ],
+            "description": "Define pipelines for image optimization and provide integration with core image styles.",
+            "homepage": "https://www.drupal.org/project/imageapi_optimize",
+            "support": {
+                "source": "https://git.drupalcode.org/project/imageapi_optimize"
             }
         },
         {
