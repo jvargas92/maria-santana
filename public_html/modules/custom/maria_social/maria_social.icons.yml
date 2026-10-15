@@ -1,0 +1,52 @@
+# An icon pack that fills gaps in the Phosphor set shipped by Forma.
+#
+# Phosphor has no Substack mark, and the theme's pack lives in contrib, so it
+# cannot be added there without being lost on the next update. This pack is a
+# sibling of "phosphor": same settings, same template, same 256x256 grid and
+# 16px stroke weight, so an icon from here sits beside the Phosphor logos in
+# the social menu without looking heavier or lighter than its neighbours.
+phosphor_extra:
+  enabled: true
+  label: "Phosphor (site additions)"
+  description: "Marks drawn to match Phosphor for platforms the Phosphor set does not cover."
+  links:
+    - https://phosphoricons.com
+  version: 1.0.0
+  license:
+    name: MIT
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - icons/phosphor-extra/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+      multipleOf: 4
+      minimum: 16
+      maximum: 96
+    color:
+      title: Color
+      type: string
+      format: color
+    alt:
+      title: "Alt text"
+      type: "string"
+      description: "Accessibility alternative text, leave empty for decorative icon."
+  template: >-
+    <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+          width="{{ size|default(32) }}"
+          height="{{ size|default(32) }}"
+          fill="{{ color|default('currentColor') }}"
+          {% if alt %}
+            aria-label="{{ alt }}"
+          {% else %}
+            aria-hidden="true"
+          {% endif %}
+        >
+          {{ content }}
+        </svg>
