@@ -137,3 +137,59 @@ select {
     min-width: 0;
   }
 }
+
+/**
+ * Site logo in the navbar.
+ *
+ * FormaTheme sizes the branding box for its own bundled SVG wordmark, which is
+ * short and wide. Two of its rules fight a raster logo:
+ *
+ *   .branding { height: 1.5rem }      - a flat 24px box, and
+ *   .branding img { height: 100%; width: 100% }   (h-full w-full in the
+ *                                      branding block template)
+ *
+ * and the max-height escape hatch it provides is restricted to vector files
+ * (`svg, img[src$=".svg"]`), so a PNG never gets it. The result is a logo
+ * squashed to 24px tall and stretched to the width of its box, ignoring its
+ * own proportions.
+ *
+ * The Maria Santana lockup is 1058x234 (about 4.5:1) and carries three tiers
+ * of detail - the MS monogram, the name, and the small "MEDIA" rule. Below
+ * roughly 40px that bottom line stops resolving, so the box is given a real
+ * height and the image is allowed to scale on its own aspect ratio inside it.
+ *
+ * Change --ms-logo-height to resize the header logo; everything else follows.
+ *
+ * The site name stays switched ON in the branding block even though the logo
+ * already reads "Maria Santana Media". FormaTheme's template builds the logo's
+ * alt text out of it (`alt="{{ site_name }}"`), so turning the name off leaves
+ * the image with an empty alt and the home link with no accessible name at
+ * all. Keeping it on and hiding the duplicate text with display:none gives the
+ * link its name through the alt and keeps the hidden copy out of the
+ * accessibility tree, so nothing is announced twice.
+ */
+:root {
+  --ms-logo-height: 2.5rem; /* 40px */
+}
+
+/* The site-name div is the branding box's next sibling in FormaTheme's
+   template. Matched by position, not by its utility classes, which change
+   between theme releases. If the logo ever fails to resolve, .branding is not
+   printed, this rule does not match, and the name shows as a fallback. */
+:is(.navbar--logo, .navbar--modal-logo) .branding + div {
+  display: none;
+}
+
+:is(.navbar--logo, .navbar--modal-logo) .branding {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+:is(.navbar--logo, .navbar--modal-logo) .branding img {
+  height: auto;
+  width: auto;
+  max-height: var(--ms-logo-height);
+  max-width: 100%;
+  object-fit: contain;
+}
