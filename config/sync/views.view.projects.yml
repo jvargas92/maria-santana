@@ -228,7 +228,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 2
+          items_per_page: 3
       sorts:
         sticky:
           id: sticky
