@@ -1,6 +1,6 @@
 uuid: 9d776285-cb19-46e1-bac7-46bfadaaa899
 langcode: en
-status: false
+status: true
 dependencies: {  }
 _core:
   default_config_hash: OAiL5l_V06GUX3aAGAdo5W3RQd-4JG0fXs8L60sfJrY
@@ -32,6 +32,7 @@ info_url: 'https://marketingplatform.google.com/intl/de/about/analytics/'
 privacy_policy_url: 'https://policies.google.com/privacy'
 javascripts:
   - analytics.js
+  - gtag.js
 callback_code: ''
 on_init: ''
 on_accept: ''

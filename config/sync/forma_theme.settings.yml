@@ -8,6 +8,6 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: logo.png
+  path: 'public://maria-santana-media-logo.png'
   use_default: false
 scheme: light

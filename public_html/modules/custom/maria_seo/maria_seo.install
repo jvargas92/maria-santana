@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for the Maria Santana SEO fixes module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_install().
+ *
+ * Drupal records a module's hook_post_update_NAME() functions as already
+ * complete at install time, so a module installed by a configuration import
+ * never executes them. The data repairs therefore have to run from here as
+ * well, otherwise installing this module via `drush config:import` leaves the
+ * very data it exists to correct untouched.
+ */
+function maria_seo_install(): void {
+  \Drupal::moduleHandler()->loadInclude('maria_seo', 'inc', 'maria_seo.operations');
+
+  foreach (['maria_seo_strip_canvas_canonical_overrides', 'maria_seo_exclude_front_and_404_from_sitemap'] as $operation) {
+    \Drupal::logger('maria_seo')->notice($operation());
+  }
+}

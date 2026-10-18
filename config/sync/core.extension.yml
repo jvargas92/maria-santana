@@ -97,7 +97,6 @@ module:
   project_browser: 0
   redirect: 0
   redirect_404: 0
-  require_login: 0
   responsive_image: 0
   sam: 0
   scheduler: 0
