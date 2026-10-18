@@ -1,0 +1,24 @@
+uuid: de6ce8fc-175b-4115-8282-3ee04e2144ff
+langcode: en
+status: true
+dependencies: {  }
+id: G-YESXNJYKJQ.6ad5535e4a3888.58758737
+label: G-YESXNJYKJQ
+weight: 0
+tag_container_ids:
+  - G-YESXNJYKJQ
+advanced_settings:
+  consent_mode: false
+dimensions_metrics: {  }
+conditions: {  }
+events:
+  sign_up:
+    method: CMS
+  webform_purchase: {  }
+  login:
+    method: CMS
+  custom: {  }
+  search: {  }
+  generate_lead:
+    value: ''
+    currency: ''
