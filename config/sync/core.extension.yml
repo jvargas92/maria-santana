@@ -65,6 +65,7 @@ module:
   login_emailusername: 0
   mailsystem: 0
   maria_email: 0
+  maria_seo: 0
   maria_social: 0
   media: 0
   media_file_delete: 0
@@ -100,6 +101,12 @@ module:
   sam: 0
   scheduler: 0
   scheduler_content_moderation_integration: 0
+  schema_article: 0
+  schema_image_object: 0
+  schema_metatag: 0
+  schema_person: 0
+  schema_video_object: 0
+  schema_web_site: 0
   seo_checklist: 0
   simple_sitemap: 0
   svg_image: 0

@@ -1,0 +1,18 @@
+uuid: a5880c77-66f7-488c-ba4d-d50211e78c6a
+langcode: en
+status: true
+dependencies: {  }
+id: node__article
+label: Article
+tags:
+  schema_article_type: NewsArticle
+  schema_article_id: '[node:url]#article'
+  schema_article_name: '[node:field_seo_title|node:title]'
+  schema_article_headline: '[node:title]'
+  schema_article_description: '[node:field_seo_description|node:field_description]'
+  schema_article_url: '[node:url]'
+  schema_article_date_published: '[node:created:custom:c]'
+  schema_article_date_modified: '[node:changed:custom:c]'
+  schema_article_image: 'a:4:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:120:"[node:field_seo_image:entity:field_media_image:entity:url|node:field_featured_image:entity:field_media_image:entity:url]";s:5:"width";s:110:"[node:field_seo_image:entity:field_media_image:width|node:field_featured_image:entity:field_media_image:width]";s:6:"height";s:112:"[node:field_seo_image:entity:field_media_image:height|node:field_featured_image:entity:field_media_image:height]";}'
+  schema_article_author: 'a:4:{s:5:"@type";s:6:"Person";s:3:"@id";s:24:"[site:url]#maria-santana";s:4:"name";s:19:"[node:field_author]";s:3:"url";s:15:"[site:url]about";}'
+  schema_article_publisher: 'a:4:{s:5:"@type";s:12:"Organization";s:3:"@id";s:23:"[site:url]#organization";s:4:"name";s:11:"[site:name]";s:3:"url";s:10:"[site:url]";}'

@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @file
+ * Hooks for the Maria Santana SEO fixes module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\canvas\Entity\Page;
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_entity_base_field_info_alter().
+ *
+ * Canvas gives canvas_page entities a "metatags" base field whose default
+ * value pins the canonical URL to [canvas_page:url], and a per-entity Metatag
+ * value outranks the metatag_defaults configuration. That token renders a
+ * root-relative path, which causes two problems:
+ *
+ * - A root-relative canonical resolves against whichever host served the
+ *   request, so it cannot consolidate the http/https and www/non-www variants
+ *   of a URL. Every page ends up self-canonical on all four origins.
+ * - The front page is a canvas_page whose own path is /home, and /home issues
+ *   a 301 to /. That leaves the site's most important page declaring a
+ *   canonical that points at a redirect.
+ *
+ * Drop canonical_url from the default so new pages fall through to
+ * metatag.metatag_defaults.canvas_page, which already resolves the absolute
+ * URL of the page actually being requested. Pages that already stored the
+ * token are corrected by maria_seo_post_update_strip_canvas_canonical().
+ *
+ * @see \Drupal\canvas\Hook\PageHooks::entityBaseFieldInfo()
+ */
+function maria_seo_entity_base_field_info_alter(array &$fields, EntityTypeInterface $entity_type): void {
+  if ($entity_type->id() !== Page::ENTITY_TYPE_ID || !isset($fields['metatags'])) {
+    return;
+  }
+
+  $default = $fields['metatags']->getDefaultValueLiteral();
+  if (!isset($default[0]['value'])) {
+    return;
+  }
+
+  $tags = json_decode((string) $default[0]['value'], TRUE);
+  if (!is_array($tags) || !array_key_exists('canonical_url', $tags)) {
+    return;
+  }
+
+  unset($tags['canonical_url']);
+  $default[0]['value'] = json_encode($tags);
+  $fields['metatags']->setDefaultValue($default);
+}

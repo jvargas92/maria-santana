@@ -7,7 +7,7 @@ mail: info@mariasantanamedia.com
 slogan: ''
 page:
   403: /user/login
-  404: /page/2
+  404: /page/5
   front: /home
 admin_compact_mode: false
 weight_select_max: 100

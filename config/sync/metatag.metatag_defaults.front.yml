@@ -30,3 +30,18 @@ tags:
   twitter_cards_description: '[canvas_page:description]'
   twitter_cards_image: '[canvas_page:image:entity:field_media_image:social_media_x:url]'
   twitter_cards_image_alt: '[canvas_page:image:entity:field_media_image:alt]'
+  schema_person_type: Person
+  schema_person_id: '[site:url]#maria-santana'
+  schema_person_name: 'Maria Santana'
+  schema_person_alternate_name: 'María Santana'
+  schema_person_job_title: 'Anchor and Correspondent'
+  schema_person_description: '[canvas_page:description]'
+  schema_person_url: '[site:url]about'
+  schema_person_same_as: 'https://www.youtube.com/@mariasantanamedia, https://www.instagram.com/mariasantanamedia/, https://www.threads.com/@mariasantanamedia, https://www.facebook.com/MariaSantanaMedia, https://www.linkedin.com/in/maria-santana-85a00825/, https://tiktok.com/@mariasantanamedia, https://substack.com/@mariasantanamedia'
+  schema_person_image: 'a:2:{s:5:"@type";s:11:"ImageObject";s:3:"url";s:55:"[canvas_page:image:entity:field_media_image:entity:url]";}'
+  schema_web_site_type: WebSite
+  schema_web_site_id: '[site:url]#website'
+  schema_web_site_name: '[site:name]'
+  schema_web_site_url: '[site:url]'
+  schema_web_site_in_language: en
+  schema_web_site_publisher: 'a:3:{s:5:"@type";s:6:"Person";s:3:"@id";s:24:"[site:url]#maria-santana";s:4:"name";s:13:"Maria Santana";}'

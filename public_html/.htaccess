@@ -106,6 +106,30 @@ AddType image/webp .webp
   # RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   # RewriteRule ^ http%{ENV:protossl}://%1%{REQUEST_URI} [L,R=301]
 
+  # SEO: enforce a single canonical origin (https://www.mariasantanamedia.com).
+  # Without this, every page also resolves at http://, and at the bare
+  # (non-www) host, so search engines see four indexable copies of each URL.
+  # Local DDEV and localhost hosts are exempt so these rules are safe to
+  # keep in version control and run in development untouched.
+  #
+  # Step 1: anything not known to be HTTPS goes to the canonical origin in a
+  # single hop. X-Forwarded-Proto is checked as well as HTTPS because the
+  # production site sits behind a TLS-terminating reverse proxy, where
+  # %{HTTPS} alone can read "off" for a genuine HTTPS request and would
+  # otherwise cause a redirect loop.
+  RewriteCond %{HTTP_HOST} !\.ddev\.site$ [NC]
+  RewriteCond %{HTTP_HOST} !^localhost$ [NC]
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://www.mariasantanamedia.com%{REQUEST_URI} [L,R=301]
+
+  # Step 2: requests already on HTTPS but on the wrong host get the www prefix.
+  RewriteCond %{HTTP_HOST} !\.ddev\.site$ [NC]
+  RewriteCond %{HTTP_HOST} !^localhost$ [NC]
+  RewriteCond %{HTTP_HOST} !^www\.mariasantanamedia\.com$ [NC]
+  RewriteRule ^ https://www.mariasantanamedia.com%{REQUEST_URI} [L,R=301]
+
+
   # Modify the RewriteBase if you are using Drupal in a subdirectory or in a
   # VirtualDocumentRoot and the rewrite rules are not working properly.
   # For example if your site is at http://example.com/drupal uncomment and

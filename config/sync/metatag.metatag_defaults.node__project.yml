@@ -1,0 +1,14 @@
+uuid: a025f0a1-8664-4212-a672-fe05fe60841d
+langcode: en
+status: true
+dependencies: {  }
+id: node__project
+label: Video
+tags:
+  schema_video_object_type: VideoObject
+  schema_video_object_id: '[node:url]#video'
+  schema_video_object_name: '[node:field_seo_title|node:title]'
+  schema_video_object_description: '[node:field_seo_description|node:field_description]'
+  schema_video_object_thumbnail_url: '[node:field_seo_image:entity:field_media_image:entity:url|node:field_featured_image:entity:field_media_image:entity:url]'
+  schema_video_object_upload_date: '[node:created:custom:c]'
+  schema_video_object_embed_url: '[node:field_source_url:uri]'
