@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - linkit
+    - maria_seo
   enforced:
     module:
       - canvas
@@ -30,3 +31,9 @@ filters:
     settings:
       title: false
       media_substitution: metadata
+  maria_seo_current_year:
+    id: maria_seo_current_year
+    provider: maria_seo
+    status: true
+    weight: 10
+    settings: {  }

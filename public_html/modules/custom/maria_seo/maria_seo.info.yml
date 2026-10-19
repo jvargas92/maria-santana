@@ -1,6 +1,6 @@
 name: Maria Santana SEO fixes
 type: module
-description: 'Search engine corrections that the contributed SEO stack leaves behind: absolute rel="canonical" URLs on Canvas pages, and a front page canonical that points at the site root instead of /home.'
+description: 'Search engine corrections that the contributed SEO stack leaves behind: absolute rel="canonical" URLs on Canvas pages, and a front page canonical that points at the site root instead of /home. Also provides a [current-year] text filter for Canvas rich text.'
 package: Custom
 core_version_requirement: ^11
 dependencies:
