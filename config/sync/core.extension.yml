@@ -44,6 +44,7 @@ module:
   editor: 0
   entity_usage: 0
   feeds: 0
+  feeds_tamper: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -114,6 +115,7 @@ module:
   system: 0
   tagify: 0
   tagify_user_list: 0
+  tamper: 0
   taxonomy: 0
   telephone: 0
   text: 0

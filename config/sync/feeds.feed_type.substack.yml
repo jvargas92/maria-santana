@@ -10,7 +10,20 @@ dependencies:
     - field.field.node.article.field_source_url
     - node.type.article
   module:
+    - feeds_tamper
     - node
+third_party_settings:
+  feeds_tamper:
+    tampers:
+      9d2d7b6c-7222-4016-810f-0e50a9097372:
+        find: '/^\s*((?:<p[^>]*>.*?<\/p>\s*){1,4}).*$/s'
+        replace: $1
+        limit: null
+        uuid: 9d2d7b6c-7222-4016-810f-0e50a9097372
+        plugin: find_replace_regex
+        source: content
+        weight: 0
+        label: 'Keep the first four paragraphs as an excerpt'
 label: 'Substack posts'
 id: substack
 description: "Her Substack publication's RSS feed, imported as articles so the posts appear in Articles & commentary."
@@ -57,7 +70,7 @@ mappings:
       guid: guid
     settings: {  }
     unique:
-      guid: true
+      guid: 1
   -
     target: created
     map:
@@ -93,6 +106,6 @@ mappings:
     map:
       value: content
     settings:
-      format: imported_content
       language: null
+      format: imported_content
     unique: {  }
