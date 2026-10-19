@@ -25,7 +25,7 @@ third_party_settings:
         weight: 0
         label: 'Keep the first four paragraphs as an excerpt'
       bb245495-3a89-4209-95d6-7a0e2825e56e:
-        text: '[_self]<p>Maria writes <em>Off Script</em> and her reporting notes on Substack. <a href="[url]">Continue reading this post</a>, or <a href="https://mariasantanamedia.substack.com/subscribe">subscribe for new posts by email</a>.</p>'
+        text: '[_self]<p><i>To continue reading <a href="[url]">this</a>, and other posts, <a href="https://mariasantanamedia.substack.com/subscribe">subscribe via Substack</a>.</i></p>'
         uuid: bb245495-3a89-4209-95d6-7a0e2825e56e
         plugin: rewrite
         source: content
