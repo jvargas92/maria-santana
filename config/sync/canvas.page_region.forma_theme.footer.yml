@@ -55,7 +55,7 @@ component_tree:
     component_version: 8a33edeeb2e4a925
     inputs:
       text:
-        value: '<p class="text-align-right"><strong>© 2026 Maria Santana </strong>All rights reserved.</p>'
+        value: '<p class="text-align-right"><strong>© 2026 Maria Santana Media </strong>All rights reserved.</p>'
         format: canvas_html_block
       text_size: text-xs
       text_color: default
