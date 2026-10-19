@@ -8561,16 +8561,16 @@
         },
         {
             "name": "enshrined/svg-sanitize",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-                "reference": "f3300fcd1bbf67d205b52217c75d0f7d6a8c47ff"
+                "reference": "9ba9001493f5da737759303f13bd965ebdaa778c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/f3300fcd1bbf67d205b52217c75d0f7d6a8c47ff",
-                "reference": "f3300fcd1bbf67d205b52217c75d0f7d6a8c47ff",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/9ba9001493f5da737759303f13bd965ebdaa778c",
+                "reference": "9ba9001493f5da737759303f13bd965ebdaa778c",
                 "shasum": ""
             },
             "require": {
@@ -8600,9 +8600,9 @@
             "description": "An SVG sanitizer for PHP",
             "support": {
                 "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
-                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/1.0.0"
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/1.1.0"
             },
-            "time": "2026-09-01T09:35:47+00:00"
+            "time": "2026-10-19T12:01:32+00:00"
         },
         {
             "name": "goalgorilla/rtseo.js",
@@ -9728,16 +9728,16 @@
         },
         {
             "name": "league/html-to-markdown",
-            "version": "5.2.2",
+            "version": "5.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/html-to-markdown.git",
-                "reference": "dd2fcb13e4c1a29521413849121032bca1fe2131"
+                "reference": "905eb9374feee6cedf9b972fc47c7c26a86bbec1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/dd2fcb13e4c1a29521413849121032bca1fe2131",
-                "reference": "dd2fcb13e4c1a29521413849121032bca1fe2131",
+                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/905eb9374feee6cedf9b972fc47c7c26a86bbec1",
+                "reference": "905eb9374feee6cedf9b972fc47c7c26a86bbec1",
                 "shasum": ""
             },
             "require": {
@@ -9750,6 +9750,7 @@
                 "phpstan/phpstan": "^1.8.8 || ^2.0",
                 "phpunit/phpunit": "^8.5 || ^9.2 || ^10.5 || ^11.0 || ^12.0 || ^13.0",
                 "scrutinizer/ocular": "^1.6",
+                "symfony/process": "^5.4 || ^6.0 || ^7.0 || ^8.0",
                 "unleashedtech/php-coding-standard": "^2.7 || ^3.0",
                 "vimeo/psalm": "^4.22 || ^5.0 || ^6.0"
             },
@@ -9793,7 +9794,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/html-to-markdown/issues",
-                "source": "https://github.com/thephpleague/html-to-markdown/tree/5.2.2"
+                "source": "https://github.com/thephpleague/html-to-markdown/tree/5.2.3"
             },
             "funding": [
                 {
@@ -9813,7 +9814,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-10-19T00:15:18+00:00"
+            "time": "2026-10-19T04:13:34+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
