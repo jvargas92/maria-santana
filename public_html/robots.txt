@@ -76,3 +76,7 @@ Disallow: /index.php/user/login
 Disallow: /index.php/user/logout
 Disallow: /index.php/media/oembed
 Disallow: /index.php/*/media/oembed
+
+# Sitemap location, so crawlers that do not read Search Console can still find
+# it. Absolute URL is required by the robots.txt spec.
+Sitemap: https://www.mariasantanamedia.com/sitemap.xml
