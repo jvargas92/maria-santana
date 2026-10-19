@@ -48,7 +48,7 @@ component_tree:
       label: 'Site branding'
       label_display: '0'
       use_site_logo: false
-      use_site_name: true
+      use_site_name: false
       use_site_slogan: false
   c893995e-800a-41b0-8c39-94e5bbb300ff:
     parent_uuid: 46847aad-03eb-46f3-a75d-8997996cd228
