@@ -7,17 +7,6 @@
 
 declare(strict_types=1);
 
-use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
-
-/**
- * Where the Substack call to action sends people to subscribe.
- *
- * The publication is the same on every environment, so this is a constant
- * rather than configuration.
- */
-const MARIA_SOCIAL_SUBSTACK_SUBSCRIBE_URL = 'https://mariasantanamedia.substack.com/subscribe';
-
 /**
  * Implements hook_theme_registry_alter().
  *
@@ -151,45 +140,5 @@ function maria_social_theme(): array {
     'maria_social_link_stack' => [
       'variables' => ['rows' => []],
     ],
-    'maria_social_substack_cta' => [
-      'variables' => ['post_url' => NULL, 'subscribe_url' => NULL],
-    ],
-  ];
-}
-
-/**
- * Implements hook_ENTITY_TYPE_view() for nodes.
- *
- * Articles imported from Substack carry only the first few paragraphs of the
- * post: the feed's full content is truncated on the way in, so the site is not
- * republishing each piece in its entirety alongside Substack. That makes a
- * pointer to the original necessary, and an invitation to subscribe useful.
- *
- * The call to action is rendered here rather than appended to the imported body
- * so that its wording lives in one template instead of inside every node, can
- * be changed without re-importing the feed, and is not restricted to the tags
- * the "Imported post content" text format allows.
- *
- * @see maria_social_reimport_substack()
- */
-function maria_social_node_view(array &$build, EntityInterface $node, EntityViewDisplayInterface $display, string $view_mode): void {
-  if ($view_mode !== 'full' || $node->bundle() !== 'article') {
-    return;
-  }
-  if (!$node->hasField('field_source') || $node->get('field_source')->value !== 'substack') {
-    return;
-  }
-
-  $post_url = '';
-  if ($node->hasField('field_source_url') && !$node->get('field_source_url')->isEmpty()) {
-    $post_url = $node->get('field_source_url')->first()->getUrl()->toString();
-  }
-
-  // Sits between the body (weight 100) and the author credit (weight 102).
-  $build['maria_social_substack_cta'] = [
-    '#theme' => 'maria_social_substack_cta',
-    '#post_url' => $post_url,
-    '#subscribe_url' => MARIA_SOCIAL_SUBSTACK_SUBSCRIBE_URL,
-    '#weight' => 101,
   ];
 }

@@ -15,15 +15,22 @@ dependencies:
 third_party_settings:
   feeds_tamper:
     tampers:
-      9d2d7b6c-7222-4016-810f-0e50a9097372:
+      dba8a15f-9d79-4bab-902a-943acf52e414:
         find: '/^\s*((?:<p[^>]*>.*?<\/p>\s*){1,4}).*$/s'
         replace: $1
         limit: null
-        uuid: 9d2d7b6c-7222-4016-810f-0e50a9097372
+        uuid: dba8a15f-9d79-4bab-902a-943acf52e414
         plugin: find_replace_regex
         source: content
         weight: 0
         label: 'Keep the first four paragraphs as an excerpt'
+      bb245495-3a89-4209-95d6-7a0e2825e56e:
+        text: '[_self]<p>Maria writes <em>Off Script</em> and her reporting notes on Substack. <a href="[url]">Continue reading this post</a>, or <a href="https://mariasantanamedia.substack.com/subscribe">subscribe for new posts by email</a>.</p>'
+        uuid: bb245495-3a89-4209-95d6-7a0e2825e56e
+        plugin: rewrite
+        source: content
+        weight: 1
+        label: 'Append the Substack call to action'
 label: 'Substack posts'
 id: substack
 description: "Her Substack publication's RSS feed, imported as articles so the posts appear in Articles & commentary."
