@@ -1,0 +1,8 @@
+name: Maria Santana admin fixes
+type: module
+description: 'Administrative UI corrections: allows WebP uploads in the theme settings logo field, which Drupal core still restricts to PNG, GIF, JPEG, APNG and SVG.'
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - drupal:file
+  - drupal:system

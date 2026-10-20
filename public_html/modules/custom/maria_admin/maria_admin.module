@@ -1,0 +1,39 @@
+<?php
+
+/**
+ * @file
+ * Hooks for the Maria Santana admin fixes module.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for the system_theme_settings form.
+ *
+ * Core limits the logo upload to 'png gif jpg jpeg apng svg', so uploading a
+ * WebP logo fails validation. That restriction is out of step with the rest of
+ * the site: the favicon field in this same form already accepts webp, and so
+ * do field_media_image and user_picture. The logo is also printed as a plain
+ * <img> rather than run through an image style, so no image toolkit has to
+ * decode the file for the upload to be usable.
+ *
+ * Append rather than replace the extension list so the field keeps whatever
+ * core (or another module) allows if that list changes.
+ *
+ * @see \Drupal\system\Form\ThemeSettingsForm::buildForm()
+ */
+function maria_admin_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  // Themes can opt out of the logo feature, so the element is not always here.
+  if (!isset($form['logo']['settings']['logo_upload']['#upload_validators']['FileExtension']['extensions'])) {
+    return;
+  }
+
+  $validator = &$form['logo']['settings']['logo_upload']['#upload_validators']['FileExtension'];
+  $allowed = preg_split('/\s+/', $validator['extensions'], -1, PREG_SPLIT_NO_EMPTY) ?: [];
+  if (!in_array('webp', $allowed, TRUE)) {
+    $allowed[] = 'webp';
+    $validator['extensions'] = implode(' ', $allowed);
+  }
+}
