@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3ad837c9dee465b168188eb349b62ae",
+    "content-hash": "c1c39aaf7c2096cbf99f619fc0e9a176",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4737,6 +4737,71 @@
                 "issues": "https://drupal.org/project/issues/editoria11y"
             },
             "published-time": "2026-10-07T19:27:11+00:00"
+        },
+        {
+            "name": "drupal/entity_update",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_update.git",
+                "reference": "3.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_update-3.0.1.zip",
+                "reference": "3.0.1",
+                "shasum": "c56d6995b380d82665038b1c18377826c97862a1"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.1",
+                    "datestamp": "1741245993",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^10 || ^11"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "Nuwantha",
+                    "homepage": "https://www.drupal.org/u/iwsp",
+                    "role": "Owner"
+                },
+                {
+                    "name": "NuWans",
+                    "homepage": "https://www.drupal.org/u/nuwans",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Siva Karthik Reddy",
+                    "homepage": "https://www.drupal.org/u/sivakarthik229",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Update Drupal Entity schema.",
+            "homepage": "https://www.drupal.org/project/entity_update",
+            "support": {
+                "source": "http://git.drupal.org/project/entity_update.git",
+                "issues": "https://www.drupal.org/project/issues/entity_update"
+            },
+            "published-time": "2025-03-06T07:26:28+00:00"
         },
         {
             "name": "drupal/entity_usage",
