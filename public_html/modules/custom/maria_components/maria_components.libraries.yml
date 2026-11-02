@@ -1,0 +1,16 @@
+# The carousel's own styles and controls.
+#
+# The component CSS is deliberately plain CSS rather than the Tailwind utility
+# classes FormaTheme's components use: the theme compiles its utilities from its
+# own source tree only, so utilities written here would never reach
+# build/main.min.css. Colors come from the shadcn/ui variables the site sets in
+# public_html/theme.css, each with the brand hex as a fallback.
+carousel:
+  css:
+    component:
+      css/carousel.css: {}
+  js:
+    js/carousel.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

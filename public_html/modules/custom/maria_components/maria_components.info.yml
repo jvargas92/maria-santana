@@ -1,0 +1,5 @@
+name: Maria Santana site components
+type: module
+description: 'Canvas components that FormaTheme does not ship. Currently a carousel: a horizontal, swipeable track of slides for the home page and any other Canvas page.'
+package: Custom
+core_version_requirement: ^11

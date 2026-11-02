@@ -10,6 +10,8 @@ dependencies:
     - canvas.component.sdc.forma_theme.group
     - canvas.component.sdc.forma_theme.navbar
     - canvas.component.sdc.forma_theme.section
+    - canvas.component.sdc.maria_components.carousel
+    - canvas.component.sdc.maria_components.carousel-slide
 name: Layout
 configEntityTypeId: component
 weight: 0
@@ -21,3 +23,6 @@ items:
   - sdc.forma_theme.group
   - sdc.forma_theme.navbar
   - sdc.forma_theme.section
+  - sdc.maria_components.carousel
+  - sdc.maria_components.carousel-slide
+

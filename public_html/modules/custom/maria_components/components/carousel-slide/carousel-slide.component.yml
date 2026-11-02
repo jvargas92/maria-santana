@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json
+name: Carousel slide
+description: 'One slide of a carousel, holding as many components as it needs. A carousel does not require these: any component placed in a carousel is already a slide.'
+group: Layout
+status: stable
+props:
+  type: object
+  properties:
+    label:
+      type: string
+      title: Accessible label
+      description: Names this slide for screen readers, which also hear its position. Leave empty to announce the position alone.
+      examples:
+        - Opening night
+    align:
+      type: string
+      title: Align content
+      enum:
+        - start
+        - center
+        - end
+      meta:enum:
+        start: Top
+        center: Middle
+        end: Bottom
+      default: center
+      examples:
+        - center
+slots:
+  slide_content:
+    title: Slide content
+    description: Anything that belongs on this one slide.

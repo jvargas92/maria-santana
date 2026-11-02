@@ -67,6 +67,7 @@ module:
   login_emailusername: 0
   mailsystem: 0
   maria_admin: 0
+  maria_components: 0
   maria_email: 0
   maria_seo: 0
   maria_social: 0

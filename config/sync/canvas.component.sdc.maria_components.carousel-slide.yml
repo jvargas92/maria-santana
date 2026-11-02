@@ -1,0 +1,47 @@
+uuid: 8f00a929-ddfe-4590-9690-c25d5f2812d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - maria_components
+    - options
+active_version: 174751ee4b141f6f
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions:
+        label:
+          required: false
+          field_type: string
+          field_storage_settings: {  }
+          field_instance_settings: {  }
+          field_widget: string_textfield
+          default_value:
+            -
+              value: 'Opening night'
+          expression: ℹ︎string␟value
+          derived_schema_metadata:
+            string_shape: {  }
+        align:
+          required: false
+          field_type: list_string
+          field_storage_settings:
+            allowed_values_function: canvas_load_allowed_values_for_component_prop
+          field_instance_settings: {  }
+          field_widget: options_select
+          default_value:
+            -
+              value: center
+          expression: ℹ︎list_string␟value
+          derived_schema_metadata: {  }
+    fallback_metadata:
+      slot_definitions:
+        slide_content:
+          title: 'Slide content'
+          description: 'Anything that belongs on this one slide.'
+label: 'Carousel slide'
+id: sdc.maria_components.carousel-slide
+provider: maria_components
+source: sdc
+source_local_id: 'maria_components:carousel-slide'
+

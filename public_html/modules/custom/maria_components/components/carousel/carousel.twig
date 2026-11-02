@@ -1,0 +1,123 @@
+{#
+/**
+ * @file
+ * A horizontal track of slides.
+ *
+ * The track is a CSS scroll-snap scroller, so it swipes, trackpad-scrolls and
+ * takes arrow keys with no JavaScript at all. The arrows, the dots and the
+ * pause button are an enhancement on top: they stay hidden until carousel.js
+ * adds the "carousel--ready" class, so a visitor whose JavaScript failed sees
+ * a working scroller rather than dead buttons.
+ *
+ * Every direct child of the track is a slide, whatever component produced it.
+ * That is why the sizing in carousel.css uses `> *` and not a slide class: an
+ * editor can drop five images straight in, with no slide wrapper anywhere.
+ *
+ * The booleans are tested with `is same as(false)`, FormaTheme's own idiom for
+ * props that default to on. An unset prop, a null and the string "false" all
+ * have to keep the default, so only a real boolean false may switch it off.
+ */
+#}
+{{ attach_library('maria_components/carousel') }}
+
+{% set ratios = {
+  '16:9': '16 / 9',
+  '4:3': '4 / 3',
+  '1:1': '1 / 1',
+  '3:4': '3 / 4'
+} %}
+{% set ratio = ratios[aspect_ratio|default('16:9')]|default(null) %}
+{% set arrows = show_arrows is same as(false) ? false : true %}
+{% set dots = show_dots is same as(false) ? false : true %}
+{% set rotates = autoplay is same as(true) %}
+
+{#
+  Canvas passes canvas_is_preview to every component it renders: true inside the
+  editor and the component library, false on the live page. An empty track has
+  no height, so the editor needs something to aim at; the front end must not
+  show that.
+#}
+{% set editing = canvas_is_preview ?? false %}
+
+{% set classes = [
+  'carousel',
+  'carousel--per-view-' ~ (slides_per_view|default('1')),
+  ratio ? 'carousel--cropped' : 'carousel--natural',
+  editing ? 'carousel--editing' : ''
+]|filter(c => c is not empty) %}
+
+<section
+  class="{{ classes|join(' ') }}"
+  role="group"
+  aria-roledescription="{{ 'carousel'|t }}"
+  aria-label="{{ label|default('Carousel'|t) }}"
+  {% if ratio %}style="--ms-carousel-aspect: {{ ratio }};"{% endif %}
+  data-carousel
+  {% if rotates %}
+    data-carousel-autoplay
+    data-carousel-interval="{{ interval|default('6') }}"
+  {% endif %}
+>
+  {#
+    tabindex makes the scroller reachable by keyboard, which WCAG 2.1.1 asks of
+    any scrollable region; carousel.js adds Left/Right/Home/End on top of the
+    browser's own scrolling.
+  #}
+  <div class="carousel__track" data-carousel-track tabindex="0">
+    {#
+      Left empty on purpose, the way FormaTheme's own grid and section leave
+      theirs. Canvas only passes a slot's value when something has been placed
+      in it, so any default written here would render on the live page whenever
+      an editor leaves the carousel empty - and in the editor it would fill the
+      drop area with markup that cannot be selected or removed.
+    #}
+    {% block slides %}{% endblock %}
+  </div>
+
+  {% if arrows or dots or rotates %}
+    <div class="carousel__controls">
+      {% if arrows %}
+        <button type="button" class="carousel__arrow" data-carousel-prev>
+          <span class="visually-hidden">{{ 'Previous slide'|t }}</span>
+          <svg class="carousel__icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+            <polyline points="160 208 80 128 160 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+          </svg>
+        </button>
+      {% endif %}
+
+      {% if dots %}
+        {# Filled in by carousel.js, which is the only thing that can count the slides. #}
+        <div class="carousel__dots" data-carousel-dots></div>
+      {% endif %}
+
+      {% if arrows %}
+        <button type="button" class="carousel__arrow" data-carousel-next>
+          <span class="visually-hidden">{{ 'Next slide'|t }}</span>
+          <svg class="carousel__icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+            <polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="20"/>
+          </svg>
+        </button>
+      {% endif %}
+
+      {% if rotates %}
+        {#
+          WCAG 2.2.2: anything that moves on its own for more than five seconds
+          needs a control to stop it. The label and the glyph are swapped by
+          carousel.js as the state changes.
+        #}
+        <button type="button" class="carousel__arrow carousel__arrow--toggle" data-carousel-toggle
+          data-label-pause="{{ 'Pause slideshow'|t }}"
+          data-label-play="{{ 'Play slideshow'|t }}">
+          <span class="visually-hidden" data-carousel-toggle-label>{{ 'Pause slideshow'|t }}</span>
+          <svg class="carousel__icon" viewBox="0 0 256 256" aria-hidden="true" focusable="false">
+            <g data-carousel-glyph-pause>
+              <rect x="56" y="44" width="48" height="168" rx="10" fill="currentColor"/>
+              <rect x="152" y="44" width="48" height="168" rx="10" fill="currentColor"/>
+            </g>
+            <polygon data-carousel-glyph-play points="76 40 212 128 76 216" fill="currentColor" hidden/>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
+  {% endif %}
+</section>

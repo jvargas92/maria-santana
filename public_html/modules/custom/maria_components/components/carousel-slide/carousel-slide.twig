@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * One slide of a carousel.
+ *
+ * The accessible name is left to carousel.js, which is the only place the
+ * slide's position is known: it writes "3 of 7", or "Opening night (3 of 7)"
+ * when this slide carries a label of its own. Without JavaScript the slide is
+ * an unnamed group, which is harmless.
+ */
+#}
+{% set editing = canvas_is_preview ?? false %}
+<div
+  class="carousel__slide carousel__slide--{{ align|default('center') }}{{ editing ? ' carousel__slide--editing' : '' }}"
+  role="group"
+  aria-roledescription="{{ 'slide'|t }}"
+  data-carousel-slide
+  {% if label %}data-carousel-slide-label="{{ label }}"{% endif %}
+>
+  {% block slide_content %}{% endblock %}
+</div>
