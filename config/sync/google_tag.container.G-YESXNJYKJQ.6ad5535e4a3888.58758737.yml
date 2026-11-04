@@ -8,17 +8,17 @@ weight: 0
 tag_container_ids:
   - G-YESXNJYKJQ
 advanced_settings:
-  consent_mode: false
+  consent_mode: true
 dimensions_metrics: {  }
 conditions: {  }
 events:
   sign_up:
     method: CMS
-  webform_purchase: {  }
-  login:
-    method: CMS
-  custom: {  }
   search: {  }
   generate_lead:
     value: ''
     currency: ''
+  custom: {  }
+  login:
+    method: CMS
+  webform_purchase: {  }

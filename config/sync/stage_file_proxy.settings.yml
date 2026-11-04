@@ -1,0 +1,10 @@
+_core:
+  default_config_hash: krCPB4R9eTxmcYKV8vVc2XqNf74CbjzYTCbvfOjQuSE
+hotlink: false
+origin: 'https://www.mariasantanamedia.com'
+origin_dir: sites/default/files
+proxy_headers: ''
+use_imagecache_root: true
+verify: true
+excluded_extensions: ''
+excluded_hotlink_extensions: ''

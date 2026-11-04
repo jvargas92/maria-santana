@@ -26,17 +26,16 @@ cookies:
 required: false
 opt_out: false
 only_once: false
-contextual_consent_only: null
-contextual_consent_text: null
+contextual_consent_only: false
+contextual_consent_text: ''
 info_url: 'https://marketingplatform.google.com/intl/de/about/analytics/'
 privacy_policy_url: 'https://policies.google.com/privacy'
 javascripts:
   - analytics.js
-  - gtag.js
 callback_code: ''
 on_init: ''
-on_accept: ''
-on_decline: ''
+on_accept: "window.dataLayer = window.dataLayer || [];\r\nfunction gtag() { dataLayer.push(arguments); }\r\ngtag('consent', 'update', {\r\n  analytics_storage: 'granted'\r\n});\r\n"
+on_decline: "window.dataLayer = window.dataLayer || [];\r\nfunction gtag() { dataLayer.push(arguments); }\r\ngtag('consent', 'update', {\r\n  analytics_storage: 'denied'\r\n});\r\n"
 wrapper_identifier: {  }
 attachments:
   - ga4_google_analytics

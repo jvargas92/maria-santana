@@ -1,4 +1,4 @@
-uuid: 3036601b-d82a-4e61-8fb0-792f7b790c92
+uuid: c196e9c2-7d1d-4b83-a615-22c2104bbde5
 langcode: en
 status: true
 dependencies:
@@ -101,4 +101,3 @@ id: sdc.maria_components.carousel
 provider: maria_components
 source: sdc
 source_local_id: 'maria_components:carousel'
-
