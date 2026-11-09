@@ -6967,17 +6967,17 @@
         },
         {
             "name": "drupal/media_library_bulk_upload",
-            "version": "1.0.6",
+            "version": "1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/media_library_bulk_upload.git",
-                "reference": "1.0.6"
+                "reference": "1.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/media_library_bulk_upload-1.0.6.zip",
-                "reference": "1.0.6",
-                "shasum": "d8d154267b65f7a966708e2481781298e733196b"
+                "url": "https://ftp.drupal.org/files/projects/media_library_bulk_upload-1.0.7.zip",
+                "reference": "1.0.7",
+                "shasum": "b0ee78f790858012fd17ddb3d6810c4be3a91311"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11"
@@ -6985,8 +6985,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.0.6",
-                    "datestamp": "1761757443",
+                    "version": "1.0.7",
+                    "datestamp": "1794240992",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7016,7 +7016,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/media_library_bulk_upload"
             },
-            "published-time": "2025-10-29T17:03:57+00:00"
+            "published-time": "2026-11-09T16:15:09+00:00"
         },
         {
             "name": "drupal/menu_link_attributes",
@@ -10401,16 +10401,16 @@
         },
         {
             "name": "laravel/prompts",
-            "version": "v0.3.26",
+            "version": "v0.3.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/prompts.git",
-                "reference": "2d1e9bf6bab8d3f383c254db7f2b4ea8816d55e0"
+                "reference": "abdfc75a1ae6c6f21522daed50da7124cbff09d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/prompts/zipball/2d1e9bf6bab8d3f383c254db7f2b4ea8816d55e0",
-                "reference": "2d1e9bf6bab8d3f383c254db7f2b4ea8816d55e0",
+                "url": "https://api.github.com/repos/laravel/prompts/zipball/abdfc75a1ae6c6f21522daed50da7124cbff09d2",
+                "reference": "abdfc75a1ae6c6f21522daed50da7124cbff09d2",
                 "shasum": ""
             },
             "require": {
@@ -10453,10 +10453,10 @@
             ],
             "description": "Add beautiful and user-friendly forms to your command-line applications.",
             "support": {
-                "source": "https://github.com/laravel/prompts/tree/v0.3.26"
+                "source": "https://github.com/laravel/prompts/tree/v0.3.27"
             },
-            "time": "2026-10-09T14:45:13+00:00",
-            "published-time": "2026-10-13T15:18:36+00:00"
+            "time": "2026-11-09T16:07:10+00:00",
+            "published-time": "2026-11-09T16:09:07+00:00"
         },
         {
             "name": "league/commonmark",
