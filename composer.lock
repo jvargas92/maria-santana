@@ -7169,17 +7169,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "2.2.6",
+            "version": "2.2.7",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "2.2.6"
+                "reference": "2.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.6.zip",
-                "reference": "2.2.6",
-                "shasum": "9cd10f4b3eecc038921ed6a16f84fb9d5946af4e"
+                "url": "https://ftp.drupal.org/files/projects/metatag-2.2.7.zip",
+                "reference": "2.2.7",
+                "shasum": "c7516fb9e396af39b4f8b1b962873558552e31d6"
             },
             "require": {
                 "drupal/core": "^10.3 || ^11",
@@ -7199,11 +7199,15 @@
                 "drupal/redirect": "^1.0",
                 "ergebnis/composer-normalize": "*"
             },
+            "suggest": {
+                "drupal/token_browser": "A significantly improved token interface for Drupal 11.3+.",
+                "drupal/token_or": "Allows providing a fallback option for when a token is empty to use either another token or a fixed value."
+            },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.2.6",
-                    "datestamp": "1793891825",
+                    "version": "2.2.7",
+                    "datestamp": "1794448328",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -7240,7 +7244,7 @@
                 "issues": "https://www.drupal.org/project/issues/metatag",
                 "docs": "https://www.drupal.org/docs/8/modules/metatag"
             },
-            "published-time": "2026-11-05T15:16:44+00:00"
+            "published-time": "2026-11-12T01:51:48+00:00"
         },
         {
             "name": "drupal/modeler_api",
@@ -9963,16 +9967,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.13.2",
+            "version": "2.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "adee536f95101929f262b8c59e8a61472f347d58"
+                "reference": "6d3cd8285a97eaa352956a4ada92fa03ecce1c4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/adee536f95101929f262b8c59e8a61472f347d58",
-                "reference": "adee536f95101929f262b8c59e8a61472f347d58",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/6d3cd8285a97eaa352956a4ada92fa03ecce1c4e",
+                "reference": "6d3cd8285a97eaa352956a4ada92fa03ecce1c4e",
                 "shasum": ""
             },
             "require": {
@@ -10062,7 +10066,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.13.2"
+                "source": "https://github.com/guzzle/psr7/tree/2.13.3"
             },
             "funding": [
                 {
@@ -10078,8 +10082,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-10-17T23:49:46+00:00",
-            "published-time": "2026-10-17T23:51:00+00:00"
+            "time": "2026-11-12T15:57:42+00:00",
+            "published-time": "2026-11-12T15:58:42+00:00"
         },
         {
             "name": "html2text/html2text",
