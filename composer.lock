@@ -2413,21 +2413,22 @@
         },
         {
             "name": "drupal/ai_logging",
-            "version": "1.3.3",
+            "version": "1.3.4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ai_logging.git",
-                "reference": "1.3.3"
+                "reference": "1.3.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ai_logging-1.3.3.zip",
-                "reference": "1.3.3",
-                "shasum": "7d273b4ec17bed4a1a992cfe6512fc30ae4e68fe"
+                "url": "https://ftp.drupal.org/files/projects/ai_logging-1.3.4.zip",
+                "reference": "1.3.4",
+                "shasum": "fb3c69b2208ad4783fe7b2b7aade97b46a88c059"
             },
             "require": {
                 "drupal/ai": "^1.2",
-                "drupal/core": "^10.4 || ^11"
+                "drupal/core": "^10.4 || ^11 || ^12",
+                "league/commonmark": "^2.4"
             },
             "conflict": {
                 "drupal/ai": "<1.2"
@@ -2435,8 +2436,8 @@
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "1.3.3",
-                    "datestamp": "1790178601",
+                    "version": "1.3.4",
+                    "datestamp": "1794842991",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2455,10 +2456,14 @@
             ],
             "description": "AI Logging module (formerly sub-module of AI Core)",
             "homepage": "https://www.drupal.org/project/ai_logging",
+            "keywords": [
+                "Actively maintained",
+                "Artificial Intelligence (AI)"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/ai_logging"
             },
-            "published-time": "2026-09-23T15:49:39+00:00"
+            "published-time": "2026-11-16T15:29:31+00:00"
         },
         {
             "name": "drupal/ai_provider_amazeeio",
@@ -5885,16 +5890,16 @@
         },
         {
             "name": "drupal/friendly_captcha_challenge",
-            "version": "0.9.18",
+            "version": "0.9.20",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/friendly_captcha_challenge.git",
-                "reference": "4c2f561e5d99f7673b1f0e055d2340dea28990cf"
+                "reference": "18c4ac5313314677af3792eb592d8c47c2ae4452"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffriendly_captcha_challenge/repository/archive.zip?sha=4c2f561e5d99f7673b1f0e055d2340dea28990cf",
-                "reference": "4c2f561e5d99f7673b1f0e055d2340dea28990cf",
+                "url": "https://git.drupalcode.org/api/v4/projects/project%2Ffriendly_captcha_challenge/repository/archive.zip?sha=18c4ac5313314677af3792eb592d8c47c2ae4452",
+                "reference": "18c4ac5313314677af3792eb592d8c47c2ae4452",
                 "shasum": ""
             },
             "type": "drupal-library",
@@ -5905,13 +5910,13 @@
             "license": [
                 "MIT"
             ],
-            "description": "TBD",
+            "description": "Friendly Captcha widget (npm package friendly-challenge), packaged as a Drupal library.",
             "homepage": "https://github.com/FriendlyCaptcha/friendly-challenge",
             "support": {
-                "source": "https://git.drupalcode.org/project/friendly_captcha_challenge/-/tree/0.9.18"
+                "source": "https://git.drupalcode.org/project/friendly_captcha_challenge/-/tree/0.9.20"
             },
-            "time": "2024-10-05T12:01:39+00:00",
-            "published-time": "2024-10-05T10:05:10+00:00"
+            "time": "2026-11-16T15:54:28+00:00",
+            "published-time": "2026-11-16T15:55:35+00:00"
         },
         {
             "name": "drupal/friendlycaptcha",
@@ -6242,6 +6247,10 @@
             ],
             "description": "Provides support for Google Tag and Google Tag Manager in Drupal.",
             "homepage": "https://www.drupal.org/project/google_tag",
+            "keywords": [
+                "Actively maintained",
+                "Integrations"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/google_tag"
             },
