@@ -4271,26 +4271,26 @@
         },
         {
             "name": "drupal/ctools",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/ctools.git",
-                "reference": "4.1.1"
+                "reference": "4.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-4.1.1.zip",
-                "reference": "4.1.1",
-                "shasum": "a04db6a0b6a22ddcfb9fe8f16955d55297b5da1c"
+                "url": "https://ftp.drupal.org/files/projects/ctools-4.1.2.zip",
+                "reference": "4.1.2",
+                "shasum": "d83e1f79258305ce72ad1e206c1395d0923b78eb"
             },
             "require": {
-                "drupal/core": "^9.5 || ^10 || ^11"
+                "drupal/core": "^10.3 || ^11 || ^12"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "4.1.1",
-                    "datestamp": "1784926417",
+                    "version": "4.1.2",
+                    "datestamp": "1795482101",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4365,7 +4365,7 @@
                 "source": "https://git.drupalcode.org/project/ctools",
                 "issues": "https://www.drupal.org/project/issues/ctools"
             },
-            "published-time": "2026-07-24T20:53:16+00:00"
+            "published-time": "2026-11-24T01:01:20+00:00"
         },
         {
             "name": "drupal/cva",
@@ -9464,6 +9464,10 @@
             ],
             "description": "Enables the creation of webforms and questionnaires.",
             "homepage": "https://drupal.org/project/webform",
+            "keywords": [
+                "Actively maintained",
+                "Integrations"
+            ],
             "support": {
                 "source": "https://git.drupalcode.org/project/webform",
                 "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
@@ -16890,16 +16894,16 @@
         },
         {
             "name": "twig/html-extra",
-            "version": "v3.29.0",
+            "version": "v3.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/html-extra.git",
-                "reference": "7147611979df81edb78baf7d003860b72e335c3f"
+                "reference": "92d388bd1685a1ef772c44d5f21f867e9550700a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/7147611979df81edb78baf7d003860b72e335c3f",
-                "reference": "7147611979df81edb78baf7d003860b72e335c3f",
+                "url": "https://api.github.com/repos/twigphp/html-extra/zipball/92d388bd1685a1ef772c44d5f21f867e9550700a",
+                "reference": "92d388bd1685a1ef772c44d5f21f867e9550700a",
                 "shasum": ""
             },
             "require": {
@@ -16909,7 +16913,7 @@
                 "twig/twig": "^3.13|^4.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^6.4|^7.0"
+                "symfony/phpunit-bridge": "^7.4|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -16942,7 +16946,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/twigphp/html-extra/tree/v3.29.0"
+                "source": "https://github.com/twigphp/html-extra/tree/v3.31.0"
             },
             "funding": [
                 {
@@ -16954,21 +16958,21 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-06T20:35:36+00:00",
-            "published-time": "2026-09-18T09:10:36+00:00"
+            "time": "2026-11-23T16:19:15+00:00",
+            "published-time": "2026-11-23T16:31:48+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v3.30.0",
+            "version": "v3.31.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "8c737079b726af72ff8ef3c595be9f6a810ea1ef"
+                "reference": "fdcda27cbcd5880ddc2c4c2dc5858fb9ea8a0cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/8c737079b726af72ff8ef3c595be9f6a810ea1ef",
-                "reference": "8c737079b726af72ff8ef3c595be9f6a810ea1ef",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/fdcda27cbcd5880ddc2c4c2dc5858fb9ea8a0cda",
+                "reference": "fdcda27cbcd5880ddc2c4c2dc5858fb9ea8a0cda",
                 "shasum": ""
             },
             "require": {
@@ -17023,7 +17027,7 @@
             ],
             "support": {
                 "issues": "https://github.com/twigphp/Twig/issues",
-                "source": "https://github.com/twigphp/Twig/tree/v3.30.0"
+                "source": "https://github.com/twigphp/Twig/tree/v3.31.0"
             },
             "funding": [
                 {
@@ -17035,8 +17039,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T13:20:01+00:00",
-            "published-time": "2026-09-25T13:20:14+00:00"
+            "time": "2026-11-23T16:31:30+00:00",
+            "published-time": "2026-11-23T16:31:44+00:00"
         },
         {
             "name": "yethee/tiktoken",
